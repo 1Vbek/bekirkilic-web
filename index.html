@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bekir Kılıç | Dijital Büyüme Danışmanlığı</title>
+    <style>
+        /* Tipografi ve Temel Ayarlar */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,600;0,800;1,300;1,400;1,600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --bg-main: #000000;
+            --apple-silver: linear-gradient(135deg, #f5f5f7 0%, #d1d1d6 100%);
+            --apple-silver-hover: linear-gradient(135deg, #ffffff 0%, #e5e5ea 100%);
+            --text-main: #f5f5f7;
+            --text-muted: #86868b;
+            --text-card-main: #000000;
+            --text-card-muted: #3a3a3c;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Navigasyon */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+            text-transform: uppercase;
+        }
+
+        .btn-contact {
+            background-color: var(--text-main);
+            color: var(--bg-main);
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid var(--text-main);
+        }
+
+        .btn-contact:hover {
+            background-color: transparent;
+            color: var(--text-main);
+            box-shadow: 0 10px 20px rgba(255,255,255,0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Animasyonlar */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Bölümü */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 5%;
+            background: radial-gradient(circle at top right, #1a1a1a, #000000);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            letter-spacing: -2px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--text-muted);
+            max-width: 600px;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .premium-quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text-main);
+            border-left: 2px solid var(--text-muted);
+            padding-left: 1rem;
+            font-weight: 400;
+            max-width: 700px;
+        }
+
+        /* Ortak Bölüm Ayarları */
+        section {
+            padding: 8rem 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--text-main);
+        }
+
+        /* Grid Yapıları */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Apple Gümüşü Kartlar */
+        .card {
+            background: var(--apple-silver);
+            padding: 3.5rem 2.5rem;
+            border-radius: 16px;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: var(--apple-silver-hover);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.08), inset 0 1px 1px rgba(255, 255, 255, 1);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            font-weight: 800;
+            color: var(--text-card-main);
+            letter-spacing: -0.5px;
+        }
+
+        .card p {
+            color: var(--text-card-muted);
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        /* Süreç (Nasıl Çalışıyoruz?) */
+        .process-step {
+            color: var(--text-card-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        /* İstatistikler */
+        .stat-industry {
+            font-size: 1.1rem;
+            color: var(--text-card-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .stat-numbers {
+            font-size: 1rem;
+            color: var(--text-card-muted);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .stat-result {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            color: var(--text-card-main);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 5px;
+        }
+
+        .currency {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-card-muted);
+        }
+
+        /* Harekete Geçirici Final (CTA) */
+        .cta-section {
+            text-align: center;
+            padding: 10rem 5%;
+            background: radial-gradient(circle at center, #1a1a1a, #000000);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .cta-quote {
+            font-size: clamp(1.8rem, 3vw, 2.8rem);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-muted);
+            line-height: 1.4;
+            max-width: 900px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .cta-quote strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .exclusivity-text {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 3rem auto;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            background-color: var(--bg-main);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Bekir Kılıç</div>
+        <a href="https://wa.me/905161622146?text=Merhaba%20Bekir%20Bey,%20markamız%20için%20strateji%20görüşmesi%20planlamak%20istiyoruz." class="btn-contact" target="_blank">İletişime Geç</a>
+    </nav>
+
+    <header class="hero fade-in">
+        <h1>Markanızı Dijitalde Büyütüyoruz.</h1>
+        <p>Premium marka algısı ve veri odaklı performans stratejileriyle dijital büyümenizi garanti altına alın.</p>
+        <div class="premium-quote fade-in" style="transition-delay: 0.3s;">
+            "İyi bir ürün sizi oyunda tutar. Doğru kurgulanmış bir reklam stratejisi ise oyunu kurmanızı sağlar."
+        </div>
+    </header>
+
+    <section>
+        <div class="section-header fade-in">
+            <h2 class="section-title">Hizmet Odaklarımız</h2>
+        </div>
+        <div class="grid-container">
+            <div class="card fade-in" style="transition-delay: 0.1s;">
+                <h3>Performans Odaklı İçerik Stratejisi</h3>
+                <p>Hedef kitlenize uygun içerik planı ve doğrudan satış odaklı içerik takvimi oluşturarak organik büyümenizi destekliyoruz.</p>
+            </div>
+            <div class="card fade-in" style="transition-delay: 0.2s;">
+                <h3>Dijital Marka Büyüme ve Bilinirlik</h3>
+                <p>Premium algınızı yöneterek marka bilinirliğini artırıyor ve sosyal medyadaki görünürlüğünüzü en üst seviyeye taşıyoruz.</p>
+            </div>
+            <div class="card fade-in" style="transition-delay: 0.3s;">
+                <h3>Performans Pazarlama & Reklam</h3>
+                <p>Meta reklamlarıyla en doğru kitleye ulaşıyor, bütçenizi optimize ederek ölçülebilir sonuçlar ve yüksek dönüşüm sağlıyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-header fade-in">
+            <h2 class="section-title">Büyüme Sürecimiz</h2>
+        </div>
+        <div class="grid-container">
+            <div class="card fade-in" style="transition-delay: 0.1s;">
+                <span class="process-step">Adım 01</span>
+                <h3>Veri ve Kitle Analizi</h3>
+                <p>Mevcut durumunuzu inceliyor, rakiplerinizi analiz ediyor ve işletmeniz için en kârlı hedef kitleyi haritalandırıyoruz.</p>
+            </div>
+            <div class="card fade-in" style="transition-delay: 0.2s;">
+                <span class="process-step">Adım 02</span>
+                <h3>Premium Konumlandırma</h3>
+                <p>Markanızın görsel dilini ve mesajını lüks segmente uyarlıyor, ucuz rekabetten çıkarıp değer odaklı bir yapıya dönüştürüyoruz.</p>
+            </div>
+            <div class="card fade-in" style="transition-delay: 0.3s;">
+                <span class="process-step">Adım 03</span>
+                <h3>Agresif Ölçekleme</h3>
+                <p>Doğru test edilmiş Meta reklam kampanyalarına bütçe aktararak, minimum maliyetle maksimum ciroyu elde ediyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-header fade-in">
+            <h2 class="section-title">Kanıtlanmış Performans</h2>
+        </div>
+        
+        <div class="grid-container">
+            <div class="card fade-in" style="transition-delay: 0.1s;">
+                <div class="stat-industry">PPF Kaplama</div>
+                <div class="stat-numbers">10.000 TL Reklam Bütçesi ile</div>
+                <div class="stat-result">
+                    <span class="counter" data-target="400000">0</span>
+                    <span class="currency">TL Ciro</span>
+                </div>
+            </div>
+
+            <div class="card fade-in" style="transition-delay: 0.2s;">
+                <div class="stat-industry">Koltuk Döşeme</div>
+                <div class="stat-numbers">15.000 TL Reklam Bütçesi ile</div>
+                <div class="stat-result">
+                    <span class="counter" data-target="500000">0</span>
+                    <span class="currency">TL Ciro</span>
+                </div>
+            </div>
+
+            <div class="card fade-in" style="transition-delay: 0.3s;">
+                <div class="stat-industry">Kadın Kuaförü</div>
+                <div class="stat-numbers">15.000 TL Reklam Bütçesi ile</div>
+                <div class="stat-result">
+                    <span class="counter" data-target="300000">0</span>
+                    <span class="currency">TL Ciro</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-quote fade-in">
+            "Sıradan reklamlar bütçe harcatır, performans odaklı stratejiler <strong>servet inşa eder.</strong> Reklam sadece görünürlük değil, <strong>ciro demektir.</strong>"
+        </div>
+        <div class="exclusivity-text fade-in" style="transition-delay: 0.1s;">
+            Hizmet kalitemizi ve odağımızı en üst düzeyde tutmak adına yalnızca sınırlı sayıda vizyoner markayla birebir çalışıyoruz. Markanızın potansiyelini değerlendirmek için kısa bir strateji görüşmesi planlayabiliriz.
+        </div>
+        <div class="fade-in" style="transition-delay: 0.2s;">
+            <a href="https://wa.me/905161622146?text=Merhaba%20Bekir%20Bey,%20markamız%20için%20strateji%20görüşmesi%20planlamak%20istiyoruz." class="btn-contact" target="_blank" style="font-size: 1rem; padding: 1rem 2.5rem;">Strateji Görüşmesi Planla</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Bekir Kılıç. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+            fadeElements.forEach(el => fadeObserver.observe(el));
+
+            const counters = document.querySelectorAll('.counter');
+            let hasCounted = false;
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasCounted) {
+                        hasCounted = true;
+                        counters.forEach(counter => {
+                            const target = +counter.getAttribute('data-target');
+                            const duration = 2500;
+                            const stepTime = Math.abs(Math.floor(duration / 100));
+                            let current = 0;
+                            const increment = target / 100;
+                            const timer = setInterval(() => {
+                                current += increment;
+                                if (current >= target) {
+                                    counter.innerText = target.toLocaleString('tr-TR');
+                                    clearInterval(timer);
+                                } else {
+                                    counter.innerText = Math.ceil(current).toLocaleString('tr-TR');
+                                }
+                            }, stepTime);
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const statsCards = document.querySelectorAll('.stat-result');
+            if (statsCards.length > 0) {
+                counterObserver.observe(statsCards[0].parentElement.parentElement);
+            }
+        });
+    </script>
+</body>
+</html>
