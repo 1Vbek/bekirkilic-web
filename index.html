@@ -76,15 +76,19 @@
             transform: translateY(-2px);
         }
 
-        /* Animasyonlar */
+        /* EFEKTİF ANİMASYONLAR (Blur-in) */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(40px);
+            filter: blur(8px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                        filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+            filter: blur(0);
         }
 
         /* Hero Bölümü */
@@ -99,7 +103,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-size: clamp(2.5rem, 6vw, 5.5rem);
             font-weight: 800;
             line-height: 1.05;
             margin-bottom: 1.5rem;
@@ -109,7 +113,7 @@
         }
 
         .hero p {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-size: clamp(1rem, 2vw, 1.4rem);
             color: var(--text-muted);
             max-width: 600px;
             font-weight: 300;
@@ -117,7 +121,7 @@
         }
 
         .premium-quote {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-style: italic;
             color: var(--text-main);
             border-left: 2px solid var(--text-muted);
@@ -133,7 +137,7 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 1.5rem;
         }
 
         .section-title {
@@ -143,10 +147,20 @@
             color: var(--text-main);
         }
 
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
         /* Grid Yapıları */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -212,7 +226,7 @@
         }
 
         .stat-result {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 800;
             letter-spacing: -2px;
             color: var(--text-card-main);
@@ -220,12 +234,31 @@
             align-items: center;
             justify-content: flex-start;
             gap: 5px;
+            flex-wrap: wrap;
         }
 
         .currency {
             font-size: 1.5rem;
             font-weight: 600;
             color: var(--text-card-muted);
+        }
+
+        /* İstatistik Açıklama Metni */
+        .stats-explanation {
+            max-width: 800px;
+            margin: 4rem auto 0 auto;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 300;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 3rem;
+        }
+        
+        .stats-explanation strong {
+            color: var(--text-main);
+            font-weight: 600;
         }
 
         /* Harekete Geçirici Final (CTA) */
@@ -237,7 +270,7 @@
         }
 
         .cta-quote {
-            font-size: clamp(1.8rem, 3vw, 2.8rem);
+            font-size: clamp(1.5rem, 3vw, 2.8rem);
             font-weight: 300;
             font-style: italic;
             color: var(--text-muted);
@@ -269,6 +302,24 @@
             font-size: 0.9rem;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
+
+        /* Mobil Optimizasyon */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 5%; }
+            .btn-contact { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
+            .hero { align-items: center; text-align: center; padding-top: 4rem; }
+            .hero h1 { font-size: 2.8rem; letter-spacing: -1px; }
+            .premium-quote { border-left: none; border-top: 2px solid var(--text-muted); padding-left: 0; padding-top: 1rem; margin-top: 1rem; }
+            section { padding: 5rem 5%; }
+            .section-header { margin-bottom: 1.5rem; }
+            .section-subtitle { margin-bottom: 2.5rem; font-size: 1rem; }
+            .section-title { font-size: 2rem; }
+            .grid-container { gap: 1.5rem; }
+            .card { padding: 2.5rem 1.5rem; }
+            .stat-result { font-size: 2.5rem; }
+            .cta-section { padding: 6rem 5%; }
+            .stats-explanation { font-size: 1rem; margin-top: 3rem; padding-top: 2.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -281,7 +332,7 @@
     <header class="hero fade-in">
         <h1>Markanızı Dijitalde Büyütüyoruz.</h1>
         <p>Premium marka algısı ve veri odaklı performans stratejileriyle dijital büyümenizi garanti altına alın.</p>
-        <div class="premium-quote fade-in" style="transition-delay: 0.3s;">
+        <div class="premium-quote fade-in" style="transition-delay: 0.4s;">
             "İyi bir ürün sizi oyunda tutar. Doğru kurgulanmış bir reklam stratejisi ise oyunu kurmanızı sağlar."
         </div>
     </header>
@@ -295,11 +346,11 @@
                 <h3>Performans Odaklı İçerik Stratejisi</h3>
                 <p>Hedef kitlenize uygun içerik planı ve doğrudan satış odaklı içerik takvimi oluşturarak organik büyümenizi destekliyoruz.</p>
             </div>
-            <div class="card fade-in" style="transition-delay: 0.2s;">
+            <div class="card fade-in" style="transition-delay: 0.3s;">
                 <h3>Dijital Marka Büyüme ve Bilinirlik</h3>
                 <p>Premium algınızı yöneterek marka bilinirliğini artırıyor ve sosyal medyadaki görünürlüğünüzü en üst seviyeye taşıyoruz.</p>
             </div>
-            <div class="card fade-in" style="transition-delay: 0.3s;">
+            <div class="card fade-in" style="transition-delay: 0.5s;">
                 <h3>Performans Pazarlama & Reklam</h3>
                 <p>Meta reklamlarıyla en doğru kitleye ulaşıyor, bütçenizi optimize ederek ölçülebilir sonuçlar ve yüksek dönüşüm sağlıyoruz.</p>
             </div>
@@ -308,23 +359,24 @@
 
     <section>
         <div class="section-header fade-in">
-            <h2 class="section-title">Büyüme Sürecimiz</h2>
+            <h2 class="section-title">Sosyal Medya Büyüme Serüveni</h2>
+            <p class="section-subtitle">Markanızı dijitalde ölçeklendirmek için şansa değil, kanıtlanmış 3 adımlı bir sisteme güveniyoruz.</p>
         </div>
         <div class="grid-container">
             <div class="card fade-in" style="transition-delay: 0.1s;">
                 <span class="process-step">Adım 01</span>
-                <h3>Veri ve Kitle Analizi</h3>
-                <p>Mevcut durumunuzu inceliyor, rakiplerinizi analiz ediyor ve işletmeniz için en kârlı hedef kitleyi haritalandırıyoruz.</p>
-            </div>
-            <div class="card fade-in" style="transition-delay: 0.2s;">
-                <span class="process-step">Adım 02</span>
-                <h3>Premium Konumlandırma</h3>
-                <p>Markanızın görsel dilini ve mesajını lüks segmente uyarlıyor, ucuz rekabetten çıkarıp değer odaklı bir yapıya dönüştürüyoruz.</p>
+                <h3>Hedef Kitle Stratejisi</h3>
+                <p>Markanızın mevcut durumunu inceliyor, rakiplerinizi analiz ediyor ve ürününüzü satın almaya en yatkın, kârlı hedef kitleyi veri odaklı olarak belirliyoruz.</p>
             </div>
             <div class="card fade-in" style="transition-delay: 0.3s;">
+                <span class="process-step">Adım 02</span>
+                <h3>İçerik Kurgusu</h3>
+                <p>Belirlenen kitleye tam isabet hitap edecek, premium marka algınızı yansıtan ve doğrudan satın alma arzusu uyandıran stratejik içerikler kurgulayıp üretiyoruz.</p>
+            </div>
+            <div class="card fade-in" style="transition-delay: 0.5s;">
                 <span class="process-step">Adım 03</span>
-                <h3>Agresif Ölçekleme</h3>
-                <p>Doğru test edilmiş Meta reklam kampanyalarına bütçe aktararak, minimum maliyetle maksimum ciroyu elde ediyoruz.</p>
+                <h3>Reklam & Optimizasyon</h3>
+                <p>Hazırlanan içerikleri Meta reklamlarıyla doğru kitleye ulaştırıyor, verileri anlık analiz ederek bütçenizi en yüksek dönüşüm getiren kampanyalara optimize ediyoruz.</p>
             </div>
         </div>
     </section>
@@ -332,35 +384,40 @@
     <section>
         <div class="section-header fade-in">
             <h2 class="section-title">Kanıtlanmış Performans</h2>
+            <p class="section-subtitle fade-in" style="transition-delay: 0.1s;">İşte tam olarak bu 3 adımlı stratejiyi uygulayarak, farklı sektörlerdeki markalarımız için elde ettiğimiz şeffaf büyüme rakamları:</p>
         </div>
         
         <div class="grid-container">
-            <div class="card fade-in" style="transition-delay: 0.1s;">
-                <div class="stat-industry">PPF Kaplama</div>
-                <div class="stat-numbers">10.000 TL Reklam Bütçesi ile</div>
-                <div class="stat-result">
-                    <span class="counter" data-target="400000">0</span>
-                    <span class="currency">TL Ciro</span>
-                </div>
-            </div>
-
             <div class="card fade-in" style="transition-delay: 0.2s;">
-                <div class="stat-industry">Koltuk Döşeme</div>
-                <div class="stat-numbers">15.000 TL Reklam Bütçesi ile</div>
+                <div class="stat-industry">PPF Kaplama</div>
+                <div class="stat-numbers">10.450 TL Reklam Bütçesi ile</div>
                 <div class="stat-result">
-                    <span class="counter" data-target="500000">0</span>
+                    <span class="counter" data-target="418250">0</span>
                     <span class="currency">TL Ciro</span>
                 </div>
             </div>
 
-            <div class="card fade-in" style="transition-delay: 0.3s;">
-                <div class="stat-industry">Kadın Kuaförü</div>
-                <div class="stat-numbers">15.000 TL Reklam Bütçesi ile</div>
+            <div class="card fade-in" style="transition-delay: 0.4s;">
+                <div class="stat-industry">Koltuk Döşeme</div>
+                <div class="stat-numbers">14.800 TL Reklam Bütçesi ile</div>
                 <div class="stat-result">
-                    <span class="counter" data-target="300000">0</span>
+                    <span class="counter" data-target="512400">0</span>
                     <span class="currency">TL Ciro</span>
                 </div>
             </div>
+
+            <div class="card fade-in" style="transition-delay: 0.6s;">
+                <div class="stat-industry">Kadın Kuaförü</div>
+                <div class="stat-numbers">15.300 TL Reklam Bütçesi ile</div>
+                <div class="stat-result">
+                    <span class="counter" data-target="314900">0</span>
+                    <span class="currency">TL Ciro</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-explanation fade-in" style="transition-delay: 0.8s;">
+            Geleneksel pazarlamada reklam harcamasının 30-40 katını kazanmak bir mucize gibi algılanabilir. Ancak veri güdümlü Meta stratejilerinde, doğru hedef kitleye premium bir görsel dille ulaştığınızda bu oranlar bir tesadüf değil, <strong>matematiksel bir kesinliktir.</strong> Dijital dünyanın sınırsız doğası sayesinde, yukarıda gördüğünüz bu rakamlar ulaşabileceğimiz tavan noktası değil; markanızın <strong>gerçek ölçeklenme potansiyelinin sadece başlangıcıdır.</strong>
         </div>
     </section>
 
@@ -368,10 +425,10 @@
         <div class="cta-quote fade-in">
             "Sıradan reklamlar bütçe harcatır, performans odaklı stratejiler <strong>servet inşa eder.</strong> Reklam sadece görünürlük değil, <strong>ciro demektir.</strong>"
         </div>
-        <div class="exclusivity-text fade-in" style="transition-delay: 0.1s;">
+        <div class="exclusivity-text fade-in" style="transition-delay: 0.2s;">
             Hizmet kalitemizi ve odağımızı en üst düzeyde tutmak adına yalnızca sınırlı sayıda vizyoner markayla birebir çalışıyoruz. Markanızın potansiyelini değerlendirmek için kısa bir strateji görüşmesi planlayabiliriz.
         </div>
-        <div class="fade-in" style="transition-delay: 0.2s;">
+        <div class="fade-in" style="transition-delay: 0.4s;">
             <a href="https://wa.me/905161622146?text=Merhaba%20Bekir%20Bey,%20markamız%20için%20strateji%20görüşmesi%20planlamak%20istiyoruz." class="btn-contact" target="_blank" style="font-size: 1rem; padding: 1rem 2.5rem;">Strateji Görüşmesi Planla</a>
         </div>
     </section>
