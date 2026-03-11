@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bekir Kılıç | Dijital Büyüme Danışmanlığı</title>
+    <title>Bekir Kılıç | Performans Odaklı Reklamcı</title>
     <style>
         /* Tipografi ve Temel Ayarlar */
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,600;0,800;1,300;1,400;1,600&display=swap');
@@ -113,21 +113,17 @@
         }
 
         .hero p {
-            font-size: clamp(1rem, 2vw, 1.4rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.6rem);
             color: var(--text-muted);
-            max-width: 600px;
+            max-width: 700px;
             font-weight: 300;
             margin-bottom: 2rem;
+            line-height: 1.5;
         }
 
-        .premium-quote {
-            font-size: 1.1rem;
-            font-style: italic;
+        .hero p strong {
             color: var(--text-main);
-            border-left: 2px solid var(--text-muted);
-            padding-left: 1rem;
-            font-weight: 400;
-            max-width: 700px;
+            font-weight: 600;
         }
 
         /* Ortak Bölüm Ayarları */
@@ -137,7 +133,7 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 4rem;
         }
 
         .section-title {
@@ -145,16 +141,40 @@
             font-weight: 800;
             letter-spacing: -1px;
             color: var(--text-main);
+            margin-bottom: 1rem;
         }
 
         .section-subtitle {
             text-align: center;
             color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 4rem auto;
+            max-width: 750px;
+            margin: 0 auto;
             font-size: 1.1rem;
             font-weight: 300;
-            line-height: 1.6;
+            line-height: 1.7;
+        }
+
+        /* Hakkımda / Felsefe Bölümü */
+        .philosophy-section {
+            background-color: #050505;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+            padding: 10rem 5%;
+        }
+
+        .philosophy-text {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.5;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .philosophy-text strong {
+            color: var(--text-main);
+            font-weight: 600;
         }
 
         /* Grid Yapıları */
@@ -197,7 +217,6 @@
             line-height: 1.7;
         }
 
-        /* Süreç (Nasıl Çalışıyoruz?) */
         .process-step {
             color: var(--text-card-muted);
             font-size: 0.9rem;
@@ -243,7 +262,19 @@
             color: var(--text-card-muted);
         }
 
-        /* İstatistik Açıklama Metni */
+        .privacy-disclaimer {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            max-width: 900px;
+            margin: 0 auto 4rem auto;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-style: italic;
+        }
+
         .stats-explanation {
             max-width: 800px;
             margin: 4rem auto 0 auto;
@@ -309,16 +340,16 @@
             .btn-contact { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
             .hero { align-items: center; text-align: center; padding-top: 4rem; }
             .hero h1 { font-size: 2.8rem; letter-spacing: -1px; }
-            .premium-quote { border-left: none; border-top: 2px solid var(--text-muted); padding-left: 0; padding-top: 1rem; margin-top: 1rem; }
+            .philosophy-text { font-size: 1.2rem; text-align: left; }
             section { padding: 5rem 5%; }
-            .section-header { margin-bottom: 1.5rem; }
-            .section-subtitle { margin-bottom: 2.5rem; font-size: 1rem; }
+            .section-header { margin-bottom: 2.5rem; }
             .section-title { font-size: 2rem; }
             .grid-container { gap: 1.5rem; }
             .card { padding: 2.5rem 1.5rem; }
             .stat-result { font-size: 2.5rem; }
             .cta-section { padding: 6rem 5%; }
             .stats-explanation { font-size: 1rem; margin-top: 3rem; padding-top: 2.5rem; }
+            .privacy-disclaimer { font-size: 0.9rem; padding: 1rem; }
         }
     </style>
 </head>
@@ -330,37 +361,20 @@
     </nav>
 
     <header class="hero fade-in">
-        <h1>Markanızı Dijitalde Büyütüyoruz.</h1>
-        <p>Premium marka algısı ve veri odaklı performans stratejileriyle dijital büyümenizi garanti altına alın.</p>
-        <div class="premium-quote fade-in" style="transition-delay: 0.4s;">
-            "İyi bir ürün sizi oyunda tutar. Doğru kurgulanmış bir reklam stratejisi ise oyunu kurmanızı sağlar."
-        </div>
+        <h1>Bekir Kılıç Kimdir ve Ne Yapar?</h1>
+        <p>Ben bir performans odaklı reklamcıyım. Ajans metrikleriyle değil, ciroyla ilgileniyorum. İşletmelere sadece görünürlük değil, <strong>doğrudan müşteri kazandıran dijital sistemler</strong> kuruyorum.</p>
     </header>
 
-    <section>
-        <div class="section-header fade-in">
-            <h2 class="section-title">Hizmet Odaklarımız</h2>
-        </div>
-        <div class="grid-container">
-            <div class="card fade-in" style="transition-delay: 0.1s;">
-                <h3>Performans Odaklı İçerik Stratejisi</h3>
-                <p>Hedef kitlenize uygun içerik planı ve doğrudan satış odaklı içerik takvimi oluşturarak organik büyümenizi destekliyoruz.</p>
-            </div>
-            <div class="card fade-in" style="transition-delay: 0.3s;">
-                <h3>Dijital Marka Büyüme ve Bilinirlik</h3>
-                <p>Premium algınızı yöneterek marka bilinirliğini artırıyor ve sosyal medyadaki görünürlüğünüzü en üst seviyeye taşıyoruz.</p>
-            </div>
-            <div class="card fade-in" style="transition-delay: 0.5s;">
-                <h3>Performans Pazarlama & Reklam</h3>
-                <p>Meta reklamlarıyla en doğru kitleye ulaşıyor, bütçenizi optimize ederek ölçülebilir sonuçlar ve yüksek dönüşüm sağlıyoruz.</p>
-            </div>
+    <section class="philosophy-section">
+        <div class="philosophy-text fade-in">
+            "5 yılı aşkın süredir işletmelerin reklamlarını yöneterek onlara müşteri kazandıracak sistemler kuruyorum. Klasik ajans kargaşasından uzak, <strong>markayla birebir iletişimde kalarak</strong> sosyal medyadaki tüm süreci bizzat kurguluyorum. Günlük optimizasyonlarla reklam performansınızı en üst seviyeye çıkarırken, süreci <strong>tamamen şeffaf ve dürüstçe</strong> yönetiyorum."
         </div>
     </section>
 
     <section>
         <div class="section-header fade-in">
-            <h2 class="section-title">Sosyal Medya Büyüme Serüveni</h2>
-            <p class="section-subtitle">Markanızı dijitalde ölçeklendirmek için şansa değil, kanıtlanmış 3 adımlı bir sisteme güveniyoruz.</p>
+            <h2 class="section-title">Bunu Nasıl Mı Yapıyorum?</h2>
+            <p class="section-subtitle">Şansa veya deneme yanılmaya yer yok. İşletmenizi büyütmek için test edilmiş ve kanıtlanmış 3 adımlı bir ekosistem uyguluyorum.</p>
         </div>
         <div class="grid-container">
             <div class="card fade-in" style="transition-delay: 0.1s;">
@@ -384,9 +398,12 @@
     <section>
         <div class="section-header fade-in">
             <h2 class="section-title">Kanıtlanmış Performans</h2>
-            <p class="section-subtitle fade-in" style="transition-delay: 0.1s;">İşte tam olarak bu 3 adımlı stratejiyi uygulayarak, farklı sektörlerdeki markalarımız için elde ettiğimiz şeffaf büyüme rakamları:</p>
         </div>
         
+        <div class="privacy-disclaimer fade-in" style="transition-delay: 0.1s;">
+            * Birlikte çalıştığım markaların isimlerini, rekabete dayalı gizlilik kuralları ve marka etiği gereğince açıkça paylaşamıyorum. Ancak şeffaflık adına, işte bu 3 adımlı stratejiyi uyguladığımız işletmelerin <strong>reklam bütçesi ve kazanç oranları:</strong>
+        </div>
+
         <div class="grid-container">
             <div class="card fade-in" style="transition-delay: 0.2s;">
                 <div class="stat-industry">PPF Kaplama</div>
