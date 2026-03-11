@@ -6,7 +6,7 @@
     <title>Bekir Kılıç | Performans Odaklı Reklamcı</title>
     <style>
         /* Tipografi ve Temel Ayarlar */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,600;0,800;1,300;1,400;1,600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600&display=swap');
         
         * {
             margin: 0;
@@ -20,7 +20,7 @@
             --apple-silver: linear-gradient(135deg, #f5f5f7 0%, #d1d1d6 100%);
             --apple-silver-hover: linear-gradient(135deg, #ffffff 0%, #e5e5ea 100%);
             --text-main: #f5f5f7;
-            --text-muted: #86868b;
+            --text-muted: #a1a1a6; /* Eskisine göre daha aydınlık bir gri */
             --text-card-main: #000000;
             --text-card-muted: #3a3a3c;
         }
@@ -114,16 +114,11 @@
 
         .hero p {
             font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-            color: var(--text-muted);
+            color: var(--text-main); /* Daha okunabilir olması için beyaza çekildi */
             max-width: 700px;
             font-weight: 300;
             margin-bottom: 2rem;
-            line-height: 1.5;
-        }
-
-        .hero p strong {
-            color: var(--text-main);
-            font-weight: 600;
+            line-height: 1.6;
         }
 
         /* Ortak Bölüm Ayarları */
@@ -146,7 +141,7 @@
 
         .section-subtitle {
             text-align: center;
-            color: var(--text-muted);
+            color: var(--text-main); /* Daha net görünüm */
             max-width: 750px;
             margin: 0 auto;
             font-size: 1.1rem;
@@ -166,15 +161,24 @@
         .philosophy-text {
             font-size: clamp(1.3rem, 3vw, 2rem);
             font-weight: 300;
-            color: var(--text-muted);
-            line-height: 1.5;
+            color: var(--text-main); /* Ana metin saf beyaz */
+            line-height: 1.6;
             max-width: 1000px;
             margin: 0 auto;
         }
 
-        .philosophy-text strong {
-            color: var(--text-main);
-            font-weight: 600;
+        /* VURGULU (HIGHLIGHT) METİNLERİN TASARIMI - İSTEDİĞİN GİBİ */
+        .hero p strong,
+        .philosophy-text strong,
+        .stats-explanation strong,
+        .cta-quote strong {
+            background-color: var(--text-main);
+            color: var(--bg-main);
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 700;
+            display: inline-block; /* Satır yüksekliğini bozmaması için */
+            margin: 0 0.1rem;
         }
 
         /* Grid Yapıları */
@@ -270,7 +274,7 @@
             max-width: 900px;
             margin: 0 auto 4rem auto;
             text-align: center;
-            color: var(--text-muted);
+            color: var(--text-main);
             font-size: 1rem;
             font-style: italic;
         }
@@ -279,17 +283,12 @@
             max-width: 800px;
             margin: 4rem auto 0 auto;
             text-align: center;
-            color: var(--text-muted);
+            color: var(--text-main);
             font-size: 1.1rem;
             line-height: 1.8;
             font-weight: 300;
             border-top: 1px solid rgba(255,255,255,0.05);
             padding-top: 3rem;
-        }
-        
-        .stats-explanation strong {
-            color: var(--text-main);
-            font-weight: 600;
         }
 
         /* Harekete Geçirici Final (CTA) */
@@ -304,20 +303,15 @@
             font-size: clamp(1.5rem, 3vw, 2.8rem);
             font-weight: 300;
             font-style: italic;
-            color: var(--text-muted);
-            line-height: 1.4;
+            color: var(--text-main);
+            line-height: 1.6;
             max-width: 900px;
             margin: 0 auto 3rem auto;
         }
 
-        .cta-quote strong {
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
         .exclusivity-text {
             font-size: 1.1rem;
-            color: var(--text-muted);
+            color: var(--text-main);
             max-width: 650px;
             margin: 0 auto 3rem auto;
             line-height: 1.6;
@@ -341,6 +335,12 @@
             .hero { align-items: center; text-align: center; padding-top: 4rem; }
             .hero h1 { font-size: 2.8rem; letter-spacing: -1px; }
             .philosophy-text { font-size: 1.2rem; text-align: left; }
+            
+            /* Mobilde vurgu etiketlerinin taşmaması için ufak ayar */
+            .hero p strong, .philosophy-text strong, .stats-explanation strong, .cta-quote strong {
+                padding: 0.1rem 0.3rem;
+            }
+
             section { padding: 5rem 5%; }
             .section-header { margin-bottom: 2.5rem; }
             .section-title { font-size: 2rem; }
@@ -362,7 +362,7 @@
 
     <header class="hero fade-in">
         <h1>Bekir Kılıç Kimdir ve Ne Yapar?</h1>
-        <p>Ben bir performans odaklı reklamcıyım. Ajans metrikleriyle değil, ciroyla ilgileniyorum. İşletmelere sadece görünürlük değil, <strong>doğrudan müşteri kazandıran dijital sistemler</strong> kuruyorum.</p>
+        <p>Ben bir performans odaklı reklamcıyım. Ajans metrikleriyle değil, ciroyla ilgileniyorum. İşletmelere sadece görünürlük değil, <strong>doğrudan müşteri kazandıran</strong> dijital sistemler kuruyorum.</p>
     </header>
 
     <section class="philosophy-section">
@@ -401,7 +401,7 @@
         </div>
         
         <div class="privacy-disclaimer fade-in" style="transition-delay: 0.1s;">
-            * Birlikte çalıştığım markaların isimlerini, rekabete dayalı gizlilik kuralları ve marka etiği gereğince açıkça paylaşamıyorum. Ancak şeffaflık adına, işte bu 3 adımlı stratejiyi uyguladığımız işletmelerin <strong>reklam bütçesi ve kazanç oranları:</strong>
+            * Birlikte çalıştığım markaların isimlerini, rekabete dayalı gizlilik kuralları ve marka etiği gereğince açıkça paylaşamıyorum. Ancak şeffaflık adına, işte bu 3 adımlı stratejiyi uyguladığımız işletmelerin reklam bütçesi ve kazanç oranları:
         </div>
 
         <div class="grid-container">
