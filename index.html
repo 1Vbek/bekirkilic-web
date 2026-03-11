@@ -20,7 +20,7 @@
             --apple-silver: linear-gradient(135deg, #f5f5f7 0%, #d1d1d6 100%);
             --apple-silver-hover: linear-gradient(135deg, #ffffff 0%, #e5e5ea 100%);
             --text-main: #f5f5f7;
-            --text-muted: #a1a1a6; /* Eskisine göre daha aydınlık bir gri */
+            --text-muted: #a1a1a6;
             --text-card-main: #000000;
             --text-card-muted: #3a3a3c;
         }
@@ -91,34 +91,33 @@
             filter: blur(0);
         }
 
-        /* Hero Bölümü */
+        /* Hero Bölümü (Açılış Alıntısı) */
         .hero {
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
+            text-align: center;
             padding: 0 5%;
             background: radial-gradient(circle at top right, #1a1a1a, #000000);
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5.5rem);
-            font-weight: 800;
-            line-height: 1.05;
+        .hero-quote {
+            font-size: clamp(2rem, 4.5vw, 4rem);
+            font-weight: 300;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
-            max-width: 900px;
-            letter-spacing: -2px;
+            max-width: 1100px;
+            letter-spacing: -1.5px;
             color: var(--text-main);
         }
 
-        .hero p {
-            font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-            color: var(--text-main); /* Daha okunabilir olması için beyaza çekildi */
-            max-width: 700px;
+        .hero-author {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            font-style: italic;
+            color: var(--text-muted);
             font-weight: 300;
-            margin-bottom: 2rem;
-            line-height: 1.6;
         }
 
         /* Ortak Bölüm Ayarları */
@@ -141,7 +140,7 @@
 
         .section-subtitle {
             text-align: center;
-            color: var(--text-main); /* Daha net görünüm */
+            color: var(--text-main);
             max-width: 750px;
             margin: 0 auto;
             font-size: 1.1rem;
@@ -155,20 +154,28 @@
             border-top: 1px solid rgba(255,255,255,0.05);
             border-bottom: 1px solid rgba(255,255,255,0.05);
             text-align: center;
-            padding: 10rem 5%;
+            padding: 8rem 5%;
+        }
+
+        .philosophy-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--text-main);
+            margin-bottom: 3rem;
         }
 
         .philosophy-text {
-            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
             font-weight: 300;
-            color: var(--text-main); /* Ana metin saf beyaz */
+            color: var(--text-main);
             line-height: 1.6;
-            max-width: 1000px;
-            margin: 0 auto;
+            max-width: 900px;
+            margin: 0 auto 2rem auto;
         }
 
-        /* VURGULU (HIGHLIGHT) METİNLERİN TASARIMI - İSTEDİĞİN GİBİ */
-        .hero p strong,
+        /* VURGULU (HIGHLIGHT) METİNLERİN TASARIMI */
+        .hero-quote strong,
         .philosophy-text strong,
         .stats-explanation strong,
         .cta-quote strong {
@@ -177,7 +184,7 @@
             padding: 0.15rem 0.5rem;
             border-radius: 6px;
             font-weight: 700;
-            display: inline-block; /* Satır yüksekliğini bozmaması için */
+            display: inline-block;
             margin: 0 0.1rem;
         }
 
@@ -300,22 +307,12 @@
         }
 
         .cta-quote {
-            font-size: clamp(1.5rem, 3vw, 2.8rem);
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             font-weight: 300;
-            font-style: italic;
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.5;
             max-width: 900px;
             margin: 0 auto 3rem auto;
-        }
-
-        .exclusivity-text {
-            font-size: 1.1rem;
-            color: var(--text-main);
-            max-width: 650px;
-            margin: 0 auto 3rem auto;
-            line-height: 1.6;
-            font-weight: 300;
         }
 
         /* Footer */
@@ -332,12 +329,13 @@
         @media (max-width: 768px) {
             nav { padding: 1rem 5%; }
             .btn-contact { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
-            .hero { align-items: center; text-align: center; padding-top: 4rem; }
-            .hero h1 { font-size: 2.8rem; letter-spacing: -1px; }
-            .philosophy-text { font-size: 1.2rem; text-align: left; }
+            .hero { padding-top: 6rem; }
+            .hero-quote { font-size: 2.2rem; letter-spacing: -1px; }
+            .philosophy-title { font-size: 2rem; }
+            .philosophy-text { font-size: 1.1rem; text-align: left; }
             
             /* Mobilde vurgu etiketlerinin taşmaması için ufak ayar */
-            .hero p strong, .philosophy-text strong, .stats-explanation strong, .cta-quote strong {
+            .hero-quote strong, .philosophy-text strong, .stats-explanation strong, .cta-quote strong {
                 padding: 0.1rem 0.3rem;
             }
 
@@ -348,6 +346,7 @@
             .card { padding: 2.5rem 1.5rem; }
             .stat-result { font-size: 2.5rem; }
             .cta-section { padding: 6rem 5%; }
+            .cta-quote { font-size: 1.5rem; }
             .stats-explanation { font-size: 1rem; margin-top: 3rem; padding-top: 2.5rem; }
             .privacy-disclaimer { font-size: 0.9rem; padding: 1rem; }
         }
@@ -361,12 +360,18 @@
     </nav>
 
     <header class="hero fade-in">
-        <h1>Bekir Kılıç Kimdir ve Ne Yapar?</h1>
-        <p>Ben bir performans odaklı reklamcıyım. Ajans metrikleriyle değil, ciroyla ilgileniyorum. İşletmelere sadece görünürlük değil, <strong>doğrudan müşteri kazandıran</strong> dijital sistemler kuruyorum.</p>
+        <h1 class="hero-quote">
+            "Sıradan reklamlar bütçe harcatır, performans odaklı stratejiler <strong>servet inşa eder.</strong> Reklam sadece görünürlük değil, <strong>ciro demektir.</strong>"
+        </h1>
+        <p class="hero-author">Bekir Kılıç</p>
     </header>
 
     <section class="philosophy-section">
+        <h2 class="philosophy-title fade-in">Bekir Kılıç Kimdir ve Ne Yapar?</h2>
         <div class="philosophy-text fade-in">
+            Ben bir performans odaklı reklamcıyım. Ajans metrikleriyle değil, ciroyla ilgileniyorum. İşletmelere sadece görünürlük değil, <strong>doğrudan müşteri kazandıran</strong> dijital sistemler kuruyorum.
+        </div>
+        <div class="philosophy-text fade-in" style="transition-delay: 0.2s;">
             "5 yılı aşkın süredir işletmelerin reklamlarını yöneterek onlara müşteri kazandıracak sistemler kuruyorum. Klasik ajans kargaşasından uzak, <strong>markayla birebir iletişimde kalarak</strong> sosyal medyadaki tüm süreci bizzat kurguluyorum. Günlük optimizasyonlarla reklam performansınızı en üst seviyeye çıkarırken, süreci <strong>tamamen şeffaf ve dürüstçe</strong> yönetiyorum."
         </div>
     </section>
@@ -440,12 +445,9 @@
 
     <section class="cta-section">
         <div class="cta-quote fade-in">
-            "Sıradan reklamlar bütçe harcatır, performans odaklı stratejiler <strong>servet inşa eder.</strong> Reklam sadece görünürlük değil, <strong>ciro demektir.</strong>"
+            Markanızı doğrudan kârlılığa taşıyacak <strong>birebir danışmanlık</strong> süreci için hemen ücretsiz strateji görüşmesi planlayın.
         </div>
-        <div class="exclusivity-text fade-in" style="transition-delay: 0.2s;">
-            Hizmet kalitemizi ve odağımızı en üst düzeyde tutmak adına yalnızca sınırlı sayıda vizyoner markayla birebir çalışıyoruz. Markanızın potansiyelini değerlendirmek için kısa bir strateji görüşmesi planlayabiliriz.
-        </div>
-        <div class="fade-in" style="transition-delay: 0.4s;">
+        <div class="fade-in" style="transition-delay: 0.2s; margin-top: 3rem;">
             <a href="https://wa.me/905161622146?text=Merhaba%20Bekir%20Bey,%20markamız%20için%20strateji%20görüşmesi%20planlamak%20istiyoruz." class="btn-contact" target="_blank" style="font-size: 1rem; padding: 1rem 2.5rem;">Strateji Görüşmesi Planla</a>
         </div>
     </section>
