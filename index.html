@@ -3,502 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bekir Kılıç | Performans Odaklı Reklamcı</title>
+    <title>Bekir Kılıç | Dijital Büyüme Danışmanı</title>
     <style>
-        /* Tipografi ve Temel Ayarlar */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
+        /* --- RENK VE FONT AYARLARI --- */
         :root {
-            --bg-main: #000000;
-            --apple-silver: linear-gradient(135deg, #f5f5f7 0%, #d1d1d6 100%);
-            --apple-silver-hover: linear-gradient(135deg, #ffffff 0%, #e5e5ea 100%);
-            --text-main: #f5f5f7;
-            --text-muted: #a1a1a6;
-            --text-card-main: #000000;
-            --text-card-muted: #3a3a3c;
+            --bg-silver: #f5f5f7;          
+            --bg-dark: #1d1d1f;            
+            --bg-card: #ffffff;           
+            --text-on-light: #1d1d1f;     
+            --text-on-dark: #f5f5f7;      
+            --text-muted-light: #86868b;  
+            --apple-blue: #0071e3;        
         }
 
         body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-silver); 
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+            /* Ortalamayı section içlerine bıraktık ki body genişliği bozmasın */
         }
 
-        /* Navigasyon */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 5%;
-            position: fixed;
+        /* Tüm bölümler (section) için standart orantı kuralları */
+        section {
             width: 100%;
-            top: 0;
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 1.1rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: var(--text-main);
-            text-transform: uppercase;
-        }
-
-        .btn-contact {
-            background-color: var(--text-main);
-            color: var(--bg-main);
-            padding: 0.8rem 1.8rem;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid var(--text-main);
-        }
-
-        .btn-contact:hover {
-            background-color: transparent;
-            color: var(--text-main);
-            box-shadow: 0 10px 20px rgba(255,255,255,0.05);
-            transform: translateY(-2px);
-        }
-
-        /* EFEKTİF ANİMASYONLAR (Blur-in) */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(40px);
-            filter: blur(8px);
-            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
-                        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-                        filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-            filter: blur(0);
-        }
-
-        /* Hero Bölümü (Açılış Alıntısı) */
-        .hero {
-            height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            box-sizing: border-box;
+            padding: 160px 20px; /* Üstten ve alttan geniş boşluk (Nefes alma alanı) */
+        }
+
+        /* --- 1. HERO (GİRİŞ) BÖLÜMÜ --- */
+        .hero {
+            height: 100vh; /* Tam ekran yüksekliği */
+            padding: 0 20px;
+            background-color: var(--bg-silver);
             text-align: center;
-            padding: 0 5%;
-            background: radial-gradient(circle at top right, #1a1a1a, #000000);
         }
 
-        .hero-quote {
-            font-size: clamp(2rem, 4.5vw, 4rem);
-            font-weight: 300;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            max-width: 1100px;
-            letter-spacing: -1.5px;
-            color: var(--text-main);
+        .hero-content {
+            max-width: 800px;
         }
 
-        .hero-author {
-            font-size: clamp(1.2rem, 2vw, 1.5rem);
-            font-style: italic;
-            color: var(--text-muted);
-            font-weight: 300;
+        .hero h1 {
+            font-size: 5rem; 
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin: 0 0 15px 0;
+            color: var(--text-on-light);
+            opacity: 0; 
+            animation: fadeInUp 1s ease-out forwards;
         }
 
-        /* Ortak Bölüm Ayarları */
-        section {
-            padding: 8rem 5%;
+        .hero p {
+            font-size: 1.8rem;
+            color: var(--text-muted-light);
+            font-weight: 400;
+            margin: 0;
+            line-height: 1.4;
+            opacity: 0; 
+            animation: fadeInUp 1s ease-out 0.6s forwards; 
         }
 
-        .section-header {
+        /* --- 2. SİSTEM (3 ADIM) BÖLÜMÜ --- */
+        .system-section {
+            background-color: var(--bg-silver);
+            min-height: 100vh; /* Ekranı tam kaplasın */
+        }
+
+        .system-container {
+            width: 100%;
+            max-width: 1100px; /* Kartların yayılma genişliği */
             text-align: center;
-            margin-bottom: 4rem;
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: var(--text-main);
-            margin-bottom: 1rem;
+        .system-title {
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--text-on-light);
+            margin: 0 0 20px 0;
+            letter-spacing: -0.02em;
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-main);
-            max-width: 750px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            font-weight: 300;
-            line-height: 1.7;
+        .system-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-muted-light);
+            max-width: 800px;
+            margin: 0 auto 80px auto;
+            line-height: 1.5;
         }
 
-        /* Hakkımda / Felsefe Bölümü */
-        .philosophy-section {
-            background-color: #050505;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            text-align: center;
-            padding: 8rem 5%;
-        }
-
-        .philosophy-title {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: var(--text-main);
-            margin-bottom: 3rem;
-        }
-
-        .philosophy-text {
-            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-            font-weight: 300;
-            color: var(--text-main);
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto 2rem auto;
-        }
-
-        /* VURGULU (HIGHLIGHT) METİNLERİN TASARIMI */
-        .hero-quote strong,
-        .philosophy-text strong,
-        .stats-explanation strong,
-        .cta-quote strong {
-            background-color: var(--text-main);
-            color: var(--bg-main);
-            padding: 0.15rem 0.5rem;
-            border-radius: 6px;
-            font-weight: 700;
-            display: inline-block;
-            margin: 0 0.1rem;
-        }
-
-        /* Grid Yapıları */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: repeat(3, 1fr); /* Tam 3 eşit sütun */
+            gap: 40px;
         }
 
-        /* Apple Gümüşü Kartlar */
         .card {
-            background: var(--apple-silver);
-            padding: 3.5rem 2.5rem;
-            border-radius: 16px;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 1);
+            background-color: var(--bg-card);
+            padding: 60px 40px;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.04); /* Zarif, geniş gölge */
+            text-align: left;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .card:hover {
             transform: translateY(-10px);
-            background: var(--apple-silver-hover);
-            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.08), inset 0 1px 1px rgba(255, 255, 255, 1);
+        }
+
+        .step-number {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 25px;
+            display: block;
         }
 
         .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.2rem;
-            font-weight: 800;
-            color: var(--text-card-main);
-            letter-spacing: -0.5px;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-on-light);
+            margin: 0 0 20px 0;
+            letter-spacing: -0.01em;
         }
 
         .card p {
-            color: var(--text-card-muted);
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.7;
-        }
-
-        .process-step {
-            color: var(--text-card-muted);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            display: block;
-            font-weight: 600;
-        }
-
-        /* İstatistikler */
-        .stat-industry {
             font-size: 1.1rem;
-            color: var(--text-card-muted);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
+            color: var(--text-muted-light);
+            line-height: 1.6;
+            margin: 0;
         }
 
-        .stat-numbers {
-            font-size: 1rem;
-            color: var(--text-card-muted);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+        /* --- 3. HAKKIMDA (UZAY GRİSİ) --- */
+        .about-section {
+            background-color: var(--bg-dark); 
+            min-height: 90vh; /* Denge için ekranı büyük oranda kaplasın */
         }
 
-        .stat-result {
-            font-size: 3.2rem;
-            font-weight: 800;
-            letter-spacing: -2px;
-            color: var(--text-card-main);
+        .about-container {
+            width: 100%;
+            max-width: 1100px;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            gap: 5px;
-            flex-wrap: wrap;
+            justify-content: space-between; /* İki öğeyi iki uca yay */
+            gap: 80px;
         }
 
-        .currency {
-            font-size: 1.5rem;
+        .about-image {
+            flex: 0 0 450px; /* Fotoğraf daha büyük ve orantılı */
+            width: 450px;
+            height: 550px; /* Dikey, estetik bir portre oranı */
+            border-radius: 24px; 
+            object-fit: cover;
+            background-color: #2c2c2e; /* Koyu placeholder rengi */
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .about-text {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .about-text h2 {
+            font-size: 3.5rem;
             font-weight: 600;
-            color: var(--text-card-muted);
+            color: var(--text-on-dark);
+            margin: 0 0 30px 0;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
         }
 
-        .privacy-disclaimer {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 1.5rem 2rem;
-            border-radius: 8px;
-            max-width: 900px;
-            margin: 0 auto 4rem auto;
-            text-align: center;
-            color: var(--text-main);
-            font-size: 1rem;
-            font-style: italic;
+        .about-text p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin: 0 0 25px 0;
+            color: #a1a1a6; /* Apple sitelerindeki o tok koyu gri metin */
         }
 
-        .stats-explanation {
-            max-width: 800px;
-            margin: 4rem auto 0 auto;
-            text-align: center;
-            color: var(--text-main);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            font-weight: 300;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 3rem;
-        }
-
-        /* Harekete Geçirici Final (CTA) */
+        /* --- 4. ÜCRETSİZ GÖRÜŞME (CTA - BEYAZ) --- */
         .cta-section {
+            background-color: #ffffff; 
+            min-height: 80vh; 
             text-align: center;
-            padding: 10rem 5%;
-            background: radial-gradient(circle at center, #1a1a1a, #000000);
-            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        .cta-quote {
-            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-            font-weight: 300;
-            color: var(--text-main);
+        .cta-container {
+            max-width: 800px;
+        }
+
+        .cta-section h2 {
+            font-size: 4rem;
+            font-weight: 600;
+            color: var(--text-on-light);
+            margin: 0 0 25px 0;
+            letter-spacing: -0.03em;
+        }
+
+        .cta-section p {
+            font-size: 1.4rem;
+            color: var(--text-muted-light);
             line-height: 1.5;
-            max-width: 900px;
-            margin: 0 auto 3rem auto;
+            margin: 0 auto 60px auto;
+            max-width: 600px;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem 5%;
-            background-color: var(--bg-main);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+        .cta-button {
+            display: inline-block;
+            background-color: var(--apple-blue);
+            color: #ffffff;
+            padding: 20px 45px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 40px; 
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.2s;
         }
 
-        /* Mobil Optimizasyon */
-        @media (max-width: 768px) {
-            nav { padding: 1rem 5%; }
-            .btn-contact { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
-            .hero { padding-top: 6rem; }
-            .hero-quote { font-size: 2.2rem; letter-spacing: -1px; }
-            .philosophy-title { font-size: 2rem; }
-            .philosophy-text { font-size: 1.1rem; text-align: left; }
-            
-            /* Mobilde vurgu etiketlerinin taşmaması için ufak ayar */
-            .hero-quote strong, .philosophy-text strong, .stats-explanation strong, .cta-quote strong {
-                padding: 0.1rem 0.3rem;
+        .cta-button:hover {
+            background-color: #0077ed; 
+            transform: scale(1.02); /* Üzerine gelince çok hafif büyüme */
+        }
+
+        /* --- MOBİL UYUMLULUK --- */
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); /* Tablette 2 sütun */
             }
+            .about-container {
+                gap: 40px;
+            }
+            .about-image {
+                flex: 0 0 350px;
+                width: 350px;
+                height: 450px;
+            }
+        }
 
-            section { padding: 5rem 5%; }
-            .section-header { margin-bottom: 2.5rem; }
-            .section-title { font-size: 2rem; }
-            .grid-container { gap: 1.5rem; }
-            .card { padding: 2.5rem 1.5rem; }
-            .stat-result { font-size: 2.5rem; }
-            .cta-section { padding: 6rem 5%; }
-            .cta-quote { font-size: 1.5rem; }
-            .stats-explanation { font-size: 1rem; margin-top: 3rem; padding-top: 2.5rem; }
-            .privacy-disclaimer { font-size: 0.9rem; padding: 1rem; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3.5rem; }
+            .hero p { font-size: 1.3rem; }
+            .system-title, .about-text h2, .cta-section h2 { font-size: 2.5rem; }
+            .grid-container {
+                grid-template-columns: 1fr; /* Mobilde tek sütun alt alta */
+            }
+            .about-container {
+                flex-direction: column-reverse; /* Mobilde fotoğraf altta, yazı üstte olsun */
+                text-align: center;
+            }
+            .about-image {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 400px;
+                height: 500px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Bekir Kılıç</div>
-        <a href="https://wa.me/905161622146?text=Merhaba%20Bekir%20Bey,%20markamız%20için%20strateji%20görüşmesi%20planlamak%20istiyoruz." class="btn-contact" target="_blank">İletişime Geç</a>
-    </nav>
-
-    <header class="hero fade-in">
-        <h1 class="hero-quote">
-            "Sıradan reklamlar bütçe harcatır, performans odaklı stratejiler <strong>servet inşa eder.</strong> Reklam sadece görünürlük değil, <strong>ciro demektir.</strong>"
-        </h1>
-        <p class="hero-author">Bekir Kılıç</p>
-    </header>
-
-    <section class="philosophy-section">
-        <h2 class="philosophy-title fade-in">Bekir Kılıç Kimdir ve Ne Yapar?</h2>
-        <div class="philosophy-text fade-in">
-            Ben bir performans odaklı reklamcıyım. Ajans metrikleriyle değil, ciroyla ilgileniyorum. İşletmelere sadece görünürlük değil, <strong>doğrudan müşteri kazandıran</strong> dijital sistemler kuruyorum.
-        </div>
-        <div class="philosophy-text fade-in" style="transition-delay: 0.2s;">
-            "5 yılı aşkın süredir işletmelerin reklamlarını yöneterek onlara müşteri kazandıracak sistemler kuruyorum. Klasik ajans kargaşasından uzak, <strong>markayla birebir iletişimde kalarak</strong> sosyal medyadaki tüm süreci bizzat kurguluyorum. Günlük optimizasyonlarla reklam performansınızı en üst seviyeye çıkarırken, süreci <strong>tamamen şeffaf ve dürüstçe</strong> yönetiyorum."
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dijital Büyüme Danışmanı.</h1>
+            <p>İşletmeniz için tıkır tıkır işleyen premium satış sistemleri.</p>
         </div>
     </section>
 
-    <section>
-        <div class="section-header fade-in">
-            <h2 class="section-title">Bunu Nasıl Mı Yapıyorum?</h2>
-            <p class="section-subtitle">Şansa veya deneme yanılmaya yer yok. İşletmenizi büyütmek için test edilmiş ve kanıtlanmış 3 adımlı bir ekosistem uyguluyorum.</p>
-        </div>
-        <div class="grid-container">
-            <div class="card fade-in" style="transition-delay: 0.1s;">
-                <span class="process-step">Adım 01</span>
-                <h3>Hedef Kitle Stratejisi</h3>
-                <p>Markanızın mevcut durumunu inceliyor, rakiplerinizi analiz ediyor ve ürününüzü satın almaya en yatkın, kârlı hedef kitleyi veri odaklı olarak belirliyoruz.</p>
-            </div>
-            <div class="card fade-in" style="transition-delay: 0.3s;">
-                <span class="process-step">Adım 02</span>
-                <h3>İçerik Kurgusu</h3>
-                <p>Belirlenen kitleye tam isabet hitap edecek, premium marka algınızı yansıtan ve doğrudan satın alma arzusu uyandıran stratejik içerikler kurgulayıp üretiyoruz.</p>
-            </div>
-            <div class="card fade-in" style="transition-delay: 0.5s;">
-                <span class="process-step">Adım 03</span>
-                <h3>Reklam & Optimizasyon</h3>
-                <p>Hazırlanan içerikleri Meta reklamlarıyla doğru kitleye ulaştırıyor, verileri anlık analiz ederek bütçenizi en yüksek dönüşüm getiren kampanyalara optimize ediyoruz.</p>
+    <section class="system-section">
+        <div class="system-container">
+            <h2 class="system-title">Ajans Değil, İş Ortağınız.</h2>
+            <p class="system-subtitle">İşletmenizi dijitalde büyütmek, kopuk parçalarla yapılamaz. Biz size sadece reklam satmıyoruz; tek pakette birleşen kapsamlı bir sistem kuruyoruz.</p>
+
+            <div class="grid-container">
+                <div class="card">
+                    <span class="step-number">Adım 01</span>
+                    <h3>Marka İnşası</h3>
+                    <p>Sosyal medyanızı, işçiliğinizin ve vizyonunuzun kalitesini yansıtan premium bir vitrine dönüştürüyoruz. Müşterinin size güvenmesi için gereken otoriteyi inşa ediyoruz.</p>
+                </div>
+                <div class="card">
+                    <span class="step-number">Adım 02</span>
+                    <h3>Meta Reklam Yönetimi</h3>
+                    <p>Karmaşık panellerle değil, stratejiyle çalışıyoruz. Fiyat sorup kaçanları değil, hizmetinizin değerini bilecek o "doğru ve kaliteli" müşteriyi filtreleyip size getiriyoruz.</p>
+                </div>
+                <div class="card">
+                    <span class="step-number">Adım 03</span>
+                    <h3>Yapay Zeka Otomasyonu</h3>
+                    <p>Her işletmenin dinamiği farklıdır. İhtiyacınızı analiz ediyor ve size özel yapay zeka otomasyonları entegre ediyoruz. Süreçleri hızlandıran bu dokunuşlarla doğrudan ciro artışı sağlıyoruz.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section>
-        <div class="section-header fade-in">
-            <h2 class="section-title">Kanıtlanmış Performans</h2>
-        </div>
-        
-        <div class="privacy-disclaimer fade-in" style="transition-delay: 0.1s;">
-            * Birlikte çalıştığım markaların isimlerini, rekabete dayalı gizlilik kuralları ve marka etiği gereğince açıkça paylaşamıyorum. Ancak şeffaflık adına, işte bu 3 adımlı stratejiyi uyguladığımız işletmelerin reklam bütçesi ve kazanç oranları:
-        </div>
-
-        <div class="grid-container">
-            <div class="card fade-in" style="transition-delay: 0.2s;">
-                <div class="stat-industry">PPF Kaplama</div>
-                <div class="stat-numbers">10.450 TL Reklam Bütçesi ile</div>
-                <div class="stat-result">
-                    <span class="counter" data-target="418250">0</span>
-                    <span class="currency">TL Ciro</span>
-                </div>
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Sistem Kurucu Kimliği.</h2>
+                <p>10 yaşımdan beri kodların, otomasyonların ve dijital dünyanın içinde büyüyorum. Benim için başarı şans değil; ölçülebilir sistemler kurmaktır.</p>
+                <p>Herkesin kaçırdığı küçük detayları birleştiriyor, işletmenize yorulmadan çalışan o kusursuz satış makinesini inşa ediyorum.</p>
             </div>
-
-            <div class="card fade-in" style="transition-delay: 0.4s;">
-                <div class="stat-industry">Koltuk Döşeme</div>
-                <div class="stat-numbers">14.800 TL Reklam Bütçesi ile</div>
-                <div class="stat-result">
-                    <span class="counter" data-target="512400">0</span>
-                    <span class="currency">TL Ciro</span>
-                </div>
-            </div>
-
-            <div class="card fade-in" style="transition-delay: 0.6s;">
-                <div class="stat-industry">Kadın Kuaförü</div>
-                <div class="stat-numbers">15.300 TL Reklam Bütçesi ile</div>
-                <div class="stat-result">
-                    <span class="counter" data-target="314900">0</span>
-                    <span class="currency">TL Ciro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="stats-explanation fade-in" style="transition-delay: 0.8s;">
-            Geleneksel pazarlamada reklam harcamasının 30-40 katını kazanmak bir mucize gibi algılanabilir. Ancak veri güdümlü Meta stratejilerinde, doğru hedef kitleye premium bir görsel dille ulaştığınızda bu oranlar bir tesadüf değil, <strong>matematiksel bir kesinliktir.</strong> Dijital dünyanın sınırsız doğası sayesinde, yukarıda gördüğünüz bu rakamlar ulaşabileceğimiz tavan noktası değil; markanızın <strong>gerçek ölçeklenme potansiyelinin sadece başlangıcıdır.</strong>
+            <<img src="bekir.jpg" alt="Bekir Kılıç" class="about-image">
         </div>
     </section>
 
     <section class="cta-section">
-        <div class="cta-quote fade-in">
-            Markanızı doğrudan kârlılığa taşıyacak <strong>birebir danışmanlık</strong> süreci için hemen ücretsiz strateji görüşmesi planlayın.
-        </div>
-        <div class="fade-in" style="transition-delay: 0.2s; margin-top: 3rem;">
-            <a href="https://wa.me/905161622146?text=Merhaba%20Bekir%20Bey,%20markamız%20için%20strateji%20görüşmesi%20planlamak%20istiyoruz." class="btn-contact" target="_blank" style="font-size: 1rem; padding: 1rem 2.5rem;">Strateji Görüşmesi Planla</a>
+        <div class="cta-container">
+            <h2>Geleceği Beraber Konuşalım.</h2>
+            <p>30 dakikalık ücretsiz görüşme planlayarak markanıza özel neler yapabileceğimizi beraber konuşabiliriz.</p>
+            <a href="GORUSME_LINKINIZ_BURAYA" class="cta-button">Ücretsiz Görüşme Planla</a>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Bekir Kılıç. Tüm hakları saklıdır.</p>
-    </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            const fadeObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.15 });
-            fadeElements.forEach(el => fadeObserver.observe(el));
-
-            const counters = document.querySelectorAll('.counter');
-            let hasCounted = false;
-            const counterObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !hasCounted) {
-                        hasCounted = true;
-                        counters.forEach(counter => {
-                            const target = +counter.getAttribute('data-target');
-                            const duration = 2500;
-                            const stepTime = Math.abs(Math.floor(duration / 100));
-                            let current = 0;
-                            const increment = target / 100;
-                            const timer = setInterval(() => {
-                                current += increment;
-                                if (current >= target) {
-                                    counter.innerText = target.toLocaleString('tr-TR');
-                                    clearInterval(timer);
-                                } else {
-                                    counter.innerText = Math.ceil(current).toLocaleString('tr-TR');
-                                }
-                            }, stepTime);
-                        });
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            const statsCards = document.querySelectorAll('.stat-result');
-            if (statsCards.length > 0) {
-                counterObserver.observe(statsCards[0].parentElement.parentElement);
-            }
-        });
-    </script>
 </body>
 </html>
