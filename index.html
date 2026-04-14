@@ -17,25 +17,25 @@
         }
 
         html {
-            scroll-behavior: smooth; /* Menüye tıklayınca yumuşak kaydırma efekti */
+            scroll-behavior: smooth;
         }
 
         body {
             margin: 0;
             padding: 0;
-            background-color: var(--bg-silver); 
+            background-color: var(--bg-dark); 
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        /* --- ÜST MENÜ (NAVBAR - APPLE TARZI BLUR) --- */
+        /* --- ÜST MENÜ (NAVBAR) --- */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
             height: 54px;
-            background-color: rgba(245, 245, 247, 0.8);
+            background-color: rgba(245, 245, 247, 0.85);
             backdrop-filter: blur(20px); 
             -webkit-backdrop-filter: blur(20px);
             display: flex;
@@ -57,7 +57,6 @@
 
         nav a:hover { opacity: 1; }
 
-        /* --- GENEL BÖLÜM AYARLARI --- */
         section {
             width: 100%;
             display: flex;
@@ -67,34 +66,74 @@
             padding: 160px 20px; 
         }
 
-        /* --- 1. HERO (GİRİŞ) BÖLÜMÜ --- */
-        .hero {
-            height: 100vh;
-            background-color: var(--bg-silver);
-            text-align: center;
-            padding-top: 54px; /* Menü yüksekliği kadar boşluk */
+        /* --- ANİMASYON SINIFLARI --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .hero h1 {
-            font-size: 5rem; 
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- 1. AÇILIŞ: KİMLİK BÖLÜMÜ (KOYU/GRİ) --- */
+        .about-hero {
+            background-color: var(--bg-dark);
+            min-height: 100vh;
+            padding-top: 140px;
+            flex-direction: column;
+        }
+
+        .hero-main-title {
+            font-size: 4.5rem;
             font-weight: 600;
+            color: var(--text-on-dark);
+            margin: 0 0 60px 0;
             letter-spacing: -0.03em;
-            margin: 0 0 15px 0;
-            color: var(--text-on-light);
-            opacity: 0; 
-            animation: fadeInUp 1s ease-out forwards;
+            text-align: center;
         }
 
-        .hero p {
-            font-size: 1.8rem;
-            color: var(--text-muted-light);
+        /* YENİ EKLENEN İSİM İMZASI STİLİ */
+        .hero-name {
+            display: block;
+            font-size: 2.2rem;
             font-weight: 400;
-            margin: 0;
-            opacity: 0; 
-            animation: fadeInUp 1s ease-out 0.6s forwards; 
+            color: #a1a1a6; /* Karanlık zeminde premium gümüş gri */
+            margin-top: 15px;
+            letter-spacing: 0.05em;
         }
 
-        /* --- 2. SİSTEM BÖLÜMÜ --- */
+        .about-hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .about-image { 
+            flex: 0 0 400px; 
+            width: 400px; 
+            height: 500px; 
+            border-radius: 24px; 
+            object-fit: cover; 
+            background-color: #2c2c2e; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        .about-text { flex: 1; }
+        
+        .about-text p { 
+            font-size: 1.25rem; 
+            line-height: 1.7; 
+            margin: 0 0 25px 0; 
+            color: #a1a1a6; 
+        }
+
+        /* --- 2. SİSTEM BÖLÜMÜ (GÜMÜŞ) --- */
         .system-section {
             background-color: var(--bg-silver);
             min-height: 100vh;
@@ -115,7 +154,7 @@
         }
 
         .system-subtitle {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--text-muted-light);
             max-width: 800px;
             margin: 0 auto 80px auto;
@@ -132,14 +171,14 @@
             background-color: var(--bg-card);
             padding: 60px 40px;
             border-radius: 24px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.03);
             text-align: left;
             transition: transform 0.4s ease;
             display: flex;
             flex-direction: column;
         }
 
-        .card:hover { transform: translateY(-10px); }
+        .card.active:hover { transform: translateY(-10px); }
 
         .step-number {
             font-size: 0.85rem;
@@ -148,10 +187,11 @@
             text-transform: uppercase;
             letter-spacing: 0.15em;
             margin-bottom: 25px;
+            display: block;
         }
 
-        .card h3 { font-size: 1.8rem; font-weight: 600; margin: 0 0 20px 0; }
-        .card p { font-size: 1.1rem; color: var(--text-muted-light); line-height: 1.6; flex-grow: 1; }
+        .card h3 { font-size: 1.8rem; font-weight: 600; margin: 0 0 20px 0; color: var(--text-on-light);}
+        .card p { font-size: 1.1rem; color: var(--text-muted-light); line-height: 1.6; flex-grow: 1; margin: 0;}
 
         .partner-link {
             display: inline-block;
@@ -164,9 +204,9 @@
         }
         .partner-link:hover { opacity: 0.7; }
 
-        /* --- 3. PRENSİPLER (YENİ EKLENEN BÖLÜM - BEYAZ) --- */
+        /* --- 3. PRENSİPLER BÖLÜMÜ (BEYAZ) --- */
         .principles-section {
-            background-color: var(--bg-card); /* Ferah Beyaz Arka Plan */
+            background-color: var(--bg-card);
             text-align: center;
             padding: 160px 20px;
         }
@@ -177,7 +217,7 @@
         }
 
         .principles-container h2 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 600;
             color: var(--text-on-light);
             margin: 0 0 30px 0;
@@ -186,66 +226,128 @@
         }
 
         .principles-container p {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: var(--text-muted-light);
             line-height: 1.7;
             margin: 0 0 20px 0;
         }
 
-        /* --- 4. HAKKIMDA (UZAY GRİSİ) --- */
-        .about-section { background-color: var(--bg-dark); min-height: 90vh; }
-        .about-container { width: 100%; max-width: 1100px; display: flex; align-items: center; justify-content: space-between; gap: 80px; }
-        .about-image { flex: 0 0 450px; width: 450px; height: 550px; border-radius: 24px; object-fit: cover; background-color: #2c2c2e; }
-        .about-text { flex: 1; max-width: 500px; }
-        .about-text h2 { font-size: 3.5rem; font-weight: 600; color: var(--text-on-dark); margin: 0 0 30px 0; letter-spacing: -0.02em; }
-        .about-text p { font-size: 1.25rem; line-height: 1.6; margin: 0 0 25px 0; color: #a1a1a6; }
+        /* --- 4. CTA BÖLÜMÜ (GÜMÜŞ) --- */
+        .cta-section { 
+            background-color: var(--bg-silver); 
+            min-height: 70vh; 
+            text-align: center; 
+        }
 
-        /* --- 5. CTA (KAPANIŞ BEYAZ) --- */
-        .cta-section { background-color: #ffffff; min-height: 80vh; text-align: center; }
-        .cta-section h2 { font-size: 4rem; font-weight: 600; color: var(--text-on-light); margin: 0 0 25px 0; letter-spacing: -0.03em; }
-        .cta-section p { font-size: 1.4rem; color: var(--text-muted-light); line-height: 1.5; margin: 0 auto 60px auto; max-width: 600px; }
-        .cta-button { display: inline-block; background-color: var(--apple-blue); color: #ffffff; padding: 20px 45px; font-size: 1.2rem; font-weight: 600; border-radius: 40px; text-decoration: none; transition: transform 0.2s; }
-        .cta-button:hover { background-color: #0077ed; transform: scale(1.02); }
+        .cta-section h2 { 
+            font-size: 4rem; 
+            font-weight: 600; 
+            color: var(--text-on-light); 
+            margin: 0 0 25px 0; 
+            letter-spacing: -0.03em; 
+        }
 
-        /* Mobil Uyum */
-        @media (max-width: 1024px) { .grid-container { grid-template-columns: repeat(2, 1fr); } .about-container { gap: 40px; } .about-image { flex: 0 0 350px; height: 450px; } }
-        @media (max-width: 768px) { .hero h1 { font-size: 3.5rem; } nav { gap: 15px; } nav a {font-size: 0.75rem;} .system-title, .principles-container h2, .about-text h2, .cta-section h2 { font-size: 2.5rem; } .grid-container { grid-template-columns: 1fr; } .about-container { flex-direction: column-reverse; text-align: center; } .about-image { width: 100%; max-width: 400px; height: 500px; } }
-        @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
+        .cta-section p { 
+            font-size: 1.4rem; 
+            color: var(--text-muted-light); 
+            line-height: 1.5; 
+            margin: 0 auto 60px auto; 
+            max-width: 600px; 
+        }
+
+        .cta-button { 
+            display: inline-block; 
+            background-color: var(--apple-blue); 
+            color: #ffffff; 
+            padding: 20px 45px; 
+            font-size: 1.2rem; 
+            font-weight: 600; 
+            border-radius: 40px; 
+            text-decoration: none; 
+            transition: background-color 0.2s, transform 0.2s; 
+        }
+
+        .cta-button:hover { 
+            background-color: #0077ed; 
+            transform: scale(1.02); 
+        }
+
+        /* --- 5. FİNAL BÖLÜMÜ (SLOGAN - KOYU/GRİ) --- */
+        .final-section {
+            background-color: var(--bg-dark);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .final-section h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--text-on-dark);
+            letter-spacing: -0.01em;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* --- MOBİL UYUMLULUK --- */
+        @media (max-width: 1024px) { 
+            .grid-container { grid-template-columns: repeat(2, 1fr); } 
+            .about-hero-content { gap: 40px; } 
+            .about-image { flex: 0 0 350px; height: 450px; } 
+        }
+
+        @media (max-width: 768px) { 
+            nav { gap: 15px; } 
+            nav a { font-size: 0.8rem; } 
+            .hero-main-title { font-size: 3rem; margin-bottom: 40px; }
+            .hero-name { font-size: 1.5rem; margin-top: 10px; }
+            .system-title, .principles-container h2, .cta-section h2 { font-size: 2.5rem; } 
+            .grid-container { grid-template-columns: 1fr; } 
+            .about-hero-content { flex-direction: column; text-align: center; } 
+            .about-image { width: 100%; max-width: 400px; height: 450px; } 
+            .final-section h2 { font-size: 1.5rem; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#vitrin">Ana Sayfa</a>
+        <a href="#kimlik">Ana Sayfa</a>
         <a href="#prensipler">Çalışma Prensiplerimiz</a>
         <a href="#gorusme">Görüşme Planla</a>
     </nav>
 
-    <section class="hero" id="vitrin">
-        <div>
-            <h1>Dijital Büyüme Danışmanı.</h1>
-            <p>İşletmeniz için premium satış sistemleri.</p>
+    <section class="about-hero" id="kimlik">
+        <h1 class="hero-main-title reveal">
+            Dijital Büyüme Danışmanı.<br>
+            <span class="hero-name">-BEKİR KILIÇ</span>
+        </h1>
+        <div class="about-hero-content">
+            <img src="bekir.jpg" alt="Bekir Kılıç" class="about-image reveal" style="transition-delay: 0.2s;">
+            <div class="about-text">
+                <p class="reveal" style="transition-delay: 0.4s;">10 yaşımdan beri sosyal medya algoritmalarının ve dijitalin gelişimiyle birlikte, bu dünyanın tam içinde büyüyorum. Benim uzmanlığım sadece platformları bilmek değil; bu organik gücü kusursuz işleyen, öngörülebilir satış sistemlerine çevirebilmek.</p>
+                <p class="reveal" style="transition-delay: 0.6s;">Sosyal medyadaki o görünmeyen detayları birleştiriyor ve işletmeniz için yorulmayan bir müşteri kazanım ağı inşa ediyorum. Kurduğumuz bu sistemler sayesinde, halihazırda birçok markayla omuz omuza çalışarak sürdürülebilir <i>büyüme</i> ve <i>başarı</i> elde ediyoruz.</p>
+            </div>
         </div>
     </section>
 
-    <section class="system-section">
+    <section class="system-section" id="sistem">
         <div class="system-container">
-            <h2 class="system-title">Büyüme Yolculuğunda Stratejik Ortağınız.</h2>
-            <p class="system-subtitle">Sosyal medyanızı ciro üreten bir satış makinesine dönüştürüyoruz. Markanızın dijital serüvenine başından sonuna kadar eşlik ediyor, sizi hizmetinizin değerini bilecek o doğru müşterilerle buluşturuyoruz.</p>
+            <h2 class="system-title reveal">Büyüme Yolculuğunda Stratejik Ortağınız.</h2>
+            <p class="system-subtitle reveal" style="transition-delay: 0.2s;">Sosyal medyanızı ciro üreten bir satış makinesine dönüştürüyoruz. Markanızın dijital serüvenine başından sonuna kadar eşlik ediyor, sizi hizmetinizin değerini bilecek o doğru müşterilerle buluşturuyoruz.</p>
 
             <div class="grid-container">
-                <div class="card">
+                <div class="card reveal" style="transition-delay: 0.1s;">
                     <span class="step-number">Adım 01</span>
                     <h3>Marka İnşası</h3>
                     <p>Sosyal medyanızı, işçiliğinizin ve vizyonunuzun kalitesini yansıtan premium bir vitrine dönüştürüyoruz. Müşterinin size güvenmesi için gereken otoriteyi inşa ediyoruz.</p>
                 </div>
-                <div class="card">
+                <div class="card reveal" style="transition-delay: 0.3s;">
                     <span class="step-number">Adım 02</span>
                     <h3>Meta Reklam Yönetimi</h3>
                     <p>Karmaşık panellerle değil, stratejiyle çalışıyoruz. Fiyat sorup kaçanları değil, hizmetinizin değerini bilecek o "doğru ve kaliteli" müşteriyi filtreleyip size getiriyoruz.</p>
                     <a href="https://abdullahaslangozdijital.com" class="partner-link" target="_blank">Meta Reklam Uzmanı: Abdullah Aslangöz ↗</a>
                 </div>
-                <div class="card">
+                <div class="card reveal" style="transition-delay: 0.5s;">
                     <span class="step-number">Adım 03</span>
                     <h3>Yapay Zeka Otomasyonu</h3>
                     <p>Her işletmenin dinamiği farklıdır. İhtiyacınızı analiz ediyor ve size özel yapay zeka otomasyonları entegre ediyoruz. Süreçleri hızlandıran bu dokunuşlarla doğrudan ciro artışı sağlıyoruz.</p>
@@ -256,30 +358,43 @@
 
     <section class="principles-section" id="prensipler">
         <div class="principles-container">
-            <h2>Gerçek Büyüme, Strateji Masasında Konuşulur.</h2>
-            <p>Her markanın finansal verisi ve büyüme stratejisi en değerli mahremidir. İş ortaklarımıza duyduğumuz saygı gereği, ciro rakamlarını veya reklam panellerini web sitemizde basit bir pazarlama aracı olarak sergilemiyoruz.</p>
-            <p>Bunun yerine; birebir görüşmemizde işin matematiğini, kurduğumuz sistemlerin çalışma mantığını ve işletmenize özel potansiyel büyüme senaryolarını sizinle birlikte değerlendiriyoruz.</p>
-        </div>
-    </section>
-
-    <section class="about-section">
-        <div class="about-container">
-            <div class="about-text">
-                <h2>Sistem Kurucu Kimliği.</h2>
-                <p>10 yaşımdan beri sosyal medya algoritmalarının ve dijitalin gelişimiyle birlikte, bu dünyanın tam içinde büyüyorum. Benim uzmanlığım sadece platformları bilmek değil; bu organik gücü kusursuz işleyen, öngörülebilir satış sistemlerine çevirebilmek.</p>
-                <p>Sosyal medyadaki o görünmeyen detayları birleştiriyor ve işletmeniz için yorulmayan bir müşteri kazanım ağı inşa ediyorum. Kurduğumuz bu sistemler sayesinde, halihazırda birçok markayla omuz omuza çalışarak sürdürülebilir <i>büyüme</i> ve <i>başarı</i> elde ediyoruz.</p>
-            </div>
-            <img src="bekir.jpg" alt="Bekir Kılıç" class="about-image">
+            <h2 class="reveal">Gerçek Büyüme, Strateji Masasında Konuşulur.</h2>
+            <p class="reveal" style="transition-delay: 0.2s;">Her markanın finansal verisi ve büyüme stratejisi en değerli mahremidir. İş ortaklarımıza duyduğumuz saygı gereği, ciro rakamlarını veya reklam panellerini web sitemizde basit bir pazarlama aracı olarak sergilemiyoruz.</p>
+            <p class="reveal" style="transition-delay: 0.4s;">Bunun yerine; birebir görüşmemizde işin matematiğini, kurduğumuz sistemlerin çalışma mantığını ve işletmenize özel potansiyel büyüme senaryolarını sizinle birlikte değerlendiriyoruz.</p>
         </div>
     </section>
 
     <section class="cta-section" id="gorusme">
         <div class="cta-container">
-            <h2>Geleceği Beraber Konuşalım.</h2>
-            <p>30 dakikalık ücretsiz görüşme planlayarak markanıza özel neler yapabileceğimizi beraber konuşabiliriz.</p>
-            <a href="GORUSME_LINKINIZ_BURAYA" class="cta-button">Ücretsiz Görüşme Planla</a>
+            <h2 class="reveal">Geleceği Beraber Konuşalım.</h2>
+            <p class="reveal" style="transition-delay: 0.2s;">30 dakikalık ücretsiz görüşme planlayarak markanıza özel neler yapabileceğimizi beraber konuşabiliriz.</p>
+            <div class="reveal" style="transition-delay: 0.4s;">
+                <a href="GORUSME_LINKINIZ_BURAYA" class="cta-button">Ücretsiz Görüşme Planla</a>
+            </div>
         </div>
     </section>
+
+    <section class="final-section">
+        <h2 class="reveal">İşletmeniz için premium satış sistemleri.</h2>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15
+            });
+
+            const hiddenElements = document.querySelectorAll('.reveal');
+            hiddenElements.forEach((el) => observer.observe(el));
+        });
+    </script>
 
 </body>
 </html>
