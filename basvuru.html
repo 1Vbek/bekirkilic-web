@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görüşme Planla | Bekir Kılıç</title>
+    <style>
+        :root {
+            --bg-dark: #1d1d1f;            
+            --bg-card: #ffffff;           
+            --text-on-light: #1d1d1f;     
+            --text-muted-light: #86868b;  
+            --apple-blue: #0071e3;
+            --input-bg: #f5f5f7;        
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark); 
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column; /* Alt alta dizilim için eklendi */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- YENİ EKLENEN İMZA (SİGMATURE) STİLİ --- */
+        .page-signature {
+            color: #a1a1a6; /* Premium gümüş/gri */
+            font-style: italic;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            margin-bottom: -15px; /* Kart ile arasındaki mesafeyi daraltmak için */
+            z-index: 1;
+            opacity: 0;
+            animation: fadeInDown 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        }
+
+        .form-container {
+            background-color: var(--bg-card);
+            width: 100%;
+            max-width: 550px;
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+            margin: 40px 20px;
+            animation: scaleIn 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards 0.1s; /* İmzadan hemen sonra belirmesi için gecikme eklendi */
+            opacity: 0;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-header h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--text-on-light);
+            margin: 0 0 10px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .form-header p {
+            font-size: 1.1rem;
+            color: var(--text-muted-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-on-light);
+            margin-bottom: 10px;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 16px;
+            font-size: 1rem;
+            background-color: var(--input-bg);
+            border: 1px solid transparent;
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-family: inherit;
+            color: var(--text-on-light);
+            transition: all 0.2s ease;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .form-group select {
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%231d1d1f%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem top 50%;
+            background-size: 0.65rem auto;
+            padding-right: 2.5rem;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--apple-blue);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--apple-blue);
+            color: #ffffff;
+            padding: 18px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0077ed;
+            transform: scale(1.02);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: var(--text-muted-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--text-on-light);
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 0.7; transform: translateY(0); } /* Hafif transparan kalarak gizemli durmasını sağladım */
+        }
+
+        @keyframes scaleIn {
+            0% { opacity: 0; transform: scale(0.95) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .form-container { padding: 40px 25px; margin: 30px 20px 20px 20px; }
+            .form-header h2 { font-size: 1.8rem; }
+            .page-signature { font-size: 0.95rem; margin-bottom: -20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <span class="page-signature">"dijitalde bir adım ötesi."</span>
+
+    <div class="form-container">
+        <div class="form-header">
+            <h2>Görüşme Talebi</h2>
+            <p>Markanızı tanımamız için formu doldurun. İncelemelerimizi yapıp sizi en kısa sürede arayacağız.</p>
+        </div>
+
+        <form action="https://formspree.io/f/BURAYA_KODUNUZ_GELECEK" method="POST">
+            
+            <div class="form-group">
+                <label for="adsoyad">Ad Soyad</label>
+                <input type="text" id="adsoyad" name="Ad Soyad" placeholder="Örn: Bekir Kılıç" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefon">Telefon Numarası</label>
+                <input type="tel" id="telefon" name="Telefon" placeholder="05XX XXX XX XX" inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+            </div>
+
+            <div class="form-group">
+                <label for="marka">Markanızın Adı veya Instagram Adresi</label>
+                <input type="text" id="marka" name="Marka Adresi" placeholder="@markaniz" required>
+            </div>
+
+            <div class="form-group">
+                <label for="kapasite">Mevcut durumda garajınızda aylık ortalama kaç araca işlem uyguluyorsunuz?</label>
+                <select id="kapasite" name="Aylık Araç Kapasitesi" required>
+                    <option value="" disabled selected>Lütfen ortalama bir sayı seçin</option>
+                    <option value="1 - 10 Araç">1 - 10 Araç (Gelişim Aşamasında)</option>
+                    <option value="11 - 30 Araç">11 - 30 Araç (Aktif İşletme)</option>
+                    <option value="31 - 50 Araç">31 - 50 Araç (Yüksek Kapasite)</option>
+                    <option value="50+ Araç">50+ Araç (Tam Ölçeklenmiş)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="hedef">Reklam bütçenizi bir 'masraf' olarak mı, yoksa 'yatırım' olarak mı görüyorsunuz?</label>
+                <textarea id="hedef" name="Reklam Vizyonu" placeholder="Kısaca değerlendirin..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="butce">Aylık Planlanan Pazarlama Bütçeniz</label>
+                <select id="butce" name="Planlanan Bütçe" required>
+                    <option value="" disabled selected>Lütfen bir aralık seçin</option>
+                    <option value="10.000 TL - 30.000 TL">10.000 TL - 30.000 TL (Başlangıç)</option>
+                    <option value="30.000 TL - 75.000 TL">30.000 TL - 75.000 TL (Büyüme)</option>
+                    <option value="75.000 TL ve Üzeri">75.000 TL ve Üzeri (Ölçekleme)</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Başvuruyu Gönder</button>
+            <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+        </form>
+    </div>
+
+</body>
+</html>
