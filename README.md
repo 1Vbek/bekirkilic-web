@@ -1,141 +1,104 @@
-# BLUEVET VETERİNER KLİNİĞİ — Website & Brand Guide
+# BlueVet Veteriner Kliniği — Web Sitesi
 
-Mersin Yenişehir'de konumlanan BLUEVET Veteriner Kliniği için tam marka kimliği, 5 sayfalık web sitesi ve dönüşüm odaklı tasarım.
+Mersin Yenişehir'de 7/24 hizmet veren BlueVet Veteriner Kliniği'nin resmi web sitesi. Tek sayfa, hızlı yüklenen, tüm cihazlarda kusursuz çalışan statik site.
 
----
+## İçerik
 
-## 🧭 Dosya yapısı
+- `index.html` — tüm site (HTML + CSS + JS tek dosyada)
+- `vercel.json` — Vercel cache ve güvenlik header ayarları
+- `robots.txt` — arama motoru tarama izinleri
+- `sitemap.xml` — SEO için site haritası (yayın sonrası domain'i güncelleyin)
+- `package.json` — proje metadatası
+- `brand-and-copy.md` — tasarım sistemi ve Türkçe içerik referansı
 
+## İletişim Bilgileri
+
+- **Telefon:** 0530 739 25 83
+- **Adres:** Limonluk Mah. İsmet İnönü Bulvarı No:312B, Yenişehir / Mersin
+- **Çalışma Saatleri:** Hafta içi 24 saat · Cumartesi 09:00–22:00 · Pazar 10:00–20:00
+
+## Vercel'e Yayınlama (3 Yöntem)
+
+### Yöntem 1 — Sürükle-Bırak (En Kolay, 30 saniye)
+
+1. [vercel.com/new](https://vercel.com/new) adresine gir, Vercel hesabınla oturum aç.
+2. Bu klasörün tamamını (`bluevet`) tarayıcıya sürükle-bırak.
+3. Vercel otomatik statik site algılayacak — "Deploy" tuşuna bas.
+4. ~20 saniye içinde `https://bluevet-xxx.vercel.app` adresi hazır.
+
+### Yöntem 2 — Vercel CLI
+
+```bash
+# 1. Vercel CLI'ı yükle (bir kez)
+npm i -g vercel
+
+# 2. Bu klasörde komut çalıştır
+cd bluevet
+vercel
+
+# 3. Sorulan birkaç soruya Enter geç (defaults)
+# 4. Production'a yayınla
+vercel --prod
 ```
-bluevet/
-├── index.html          Anasayfa (dönüşüm odaklı)
-├── hakkimizda.html     Hakkımızda / Dr. Ömer Bey hikayesi
-├── hizmetler.html      Tüm hizmetler — kedi, köpek, koruyucu, cerrahi, acil
-├── yorumlar.html       Sosyal kanıt + olumsuz yorumlara profesyonel yanıt
-├── iletisim.html       Adres, telefon, harita, çalışma saatleri
-└── assets/
-    ├── style.css       Tüm stil sistemi (tasarım tokenları, komponent stilleri)
-    └── script.js       Mobil menü, sayaç animasyonları, scroll-reveal
+
+### Yöntem 3 — GitHub + Vercel (Otomatik Deploy)
+
+1. Bu klasörü bir GitHub repository'ye push'la.
+2. [vercel.com/new](https://vercel.com/new) → "Import Git Repository"
+3. Repo'yu seç → "Deploy"
+4. Artık her `git push` otomatik yeni deploy tetikler.
+
+## Domain Bağlama
+
+Vercel panelinde:
+1. Projeyi aç → **Settings** → **Domains**
+2. `bluevet.com.tr` (veya istediğin domain) ekle
+3. Vercel'in verdiği A record (76.76.21.21) veya CNAME'i domain sağlayıcında ayarla
+4. Propagation için 5–60 dakika bekle → https otomatik aktifleşir
+
+## Yerel Önizleme
+
+```bash
+# Basit Python sunucusu
+python3 -m http.server 8080
+# → http://localhost:8080
+
+# veya npx serve
+npx serve .
+# → http://localhost:3000
 ```
 
-Deploy için `bluevet/` klasörünün tamamını herhangi bir statik hosting servisine (Netlify, Vercel, Hostinger, cPanel) yükleyin. Hiçbir backend veya build aşaması yok — açıp direkt kullanabilirsiniz.
+## Özelleştirme
+
+### Telefon numarasını değiştirmek için
+`index.html` içinde şu yerlerde değişiklik yap:
+- `tel:+905307392583` (arama linkleri)
+- `wa.me/905307392583` (WhatsApp linkleri)
+- `0530 739 25 83` (görünen metin)
+
+### Adres / harita değiştirmek için
+"Çalışma Saatleri & Konum" bölümündeki iframe `src`'sini ve alt metin bloğunu güncelle.
+
+### Görselleri değiştirmek için
+Şu an Unsplash CDN kullanılıyor. Kendi fotoğraflarını eklemek için:
+1. Klasöre `/images/` dizini aç, `.jpg`/`.webp` dosyalarını koy.
+2. HTML'deki `<img src="https://images.unsplash.com/...">` URL'lerini `src="/images/kendi-resmin.jpg"` olarak değiştir.
+
+## Performans Notları
+
+- Tek HTML dosyası, inline CSS + JS — ekstra network request yok.
+- Google Fonts `display=swap` ile hemen render oluyor.
+- Resimler lazy-load.
+- `prefers-reduced-motion` saygıyla işleniyor.
+- Lighthouse tahmini skor: 95+ / 100 (mobil & masaüstü).
+
+## Tarayıcı Uyumluluğu
+
+- Chrome / Edge / Safari / Firefox son 2 sürüm
+- iOS Safari 14+ (safe-area inset desteği dahil)
+- Android Chrome 90+
+- Küçük ekranlar (320px) dahil tüm viewport boyutları
 
 ---
 
-## 🎨 Marka kimliği
-
-**Pozisyonlama:** Premium ama soğuk değil — sıcak, dürüst, 20 yıllık aile hekimi hissi.
-
-**Ana renkler**
-
-| İsim | Kullanım | Hex |
-|---|---|---|
-| Midnight Navy | Başlıklar, footer | `#0b2440` |
-| BLUEVET Blue | Birincil marka, CTA | `#1b4d7e` |
-| Lake Blue | Linkler, aksan | `#3a7cb5` |
-| Sky Soft | Arka plan tonları | `#a7c6e2` |
-| Cream | Sıcak arka plan | `#faf7f2` |
-| Gold | Premium vurgu, yıldızlar | `#c9a35a` |
-
-**Tipografi**
-- Başlıklar: **Cormorant Garamond** (italik kullanım lüks hissi verir)
-- Gövde: **Inter** (modern, okunaklı)
-- İkisi de Google Fonts — ücretsiz, web'e gömülü.
-
-**Logo işareti:** El+kalp motifli ev/shelter ikonu — "barınma" ve "şefkat"i aynı anda söyler. Metinle birlikte "BLUEVET" / "Veteriner Kliniği".
-
-**Ses tonu**
-- Emir kipi değil, davet kipi
-- Teknik terim değil, anne-kalbiyle yazılmış cümleler
-- "Biz" yerine "birlikte"
-- Net, kısa, sakinleştirici microcopy
-
----
-
-## 🧱 Sayfa yapısı & strateji
-
-### 1. Anasayfa (`index.html`) — dönüşüm odaklı
-`Hero (duygusal başlık + 3 CTA) → Trust Bar (4 animasyonlu sayı) → Hizmetler önizlemesi (6 kart) → Neden Biz (4 madde) → Dr. Ömer Bey highlight + alıntı → Review aggregate (4.8/5) + 3 yorum → 7/24 Acil şeridi → FAQ (6 soru) → Final CTA → Footer`
-
-### 2. Hakkımızda (`hakkimizda.html`)
-`Sayfa başlığı → Doktor hikayesi + alıntı → Değerler (3 kart) → 20 yıllık timeline → Mesleki duruş blok → CTA`
-
-### 3. Hizmetler (`hizmetler.html`)
-`Sayfa başlığı → Kedi Sağlığı (SVG + checklist) → Köpek Sağlığı (SVG + checklist) → Koruyucu Bakım grid (6 kart) → Cerrahi & Laboratuvar grid (6 kart, son kart koyu "Acil") → Şeffaflık sözü bandı → Acil band`
-
-### 4. Yorumlar (`yorumlar.html`)
-`Sayfa başlığı → 4 istatistik → Agg 4.8/5 banner → 9 yorum kartı → Olumsuz yorumlar için profesyonel yanıt → CTA`
-
-### 5. İletişim (`iletisim.html`)
-`Sayfa başlığı → İki sütun: iletişim kartı (adres/telefon/saat/acil) + Google Maps iframe → Microcopy "kendi evimizdenmiş gibi" → 4 pratik FAQ → Final acil band`
-
-Her sayfada aynı **sticky header**, **yüzer WhatsApp bubble** (desktop), ve **mobile sticky CTA barı** (Ara + WhatsApp) bulunur.
-
----
-
-## ⚡ Dönüşüm elementleri (conversion levers)
-
-| Eleman | Nereye |
-|---|---|
-| **3 CTA seti** (Ara / WhatsApp / Yol Tarifi) | Her hero + her final CTA |
-| **Floating WhatsApp** (pulse animasyonlu) | Tüm sayfalarda, desktop |
-| **Sticky mobile bar** | Tüm sayfalar, 640px altı |
-| **Trust counters** (20+, 5000+, 24/7, 4.8) | Anasayfa + Yorumlar |
-| **7/24 Acil band** | Anasayfa, Hizmetler, İletişim |
-| **Review aggregate badge** (Google onaylı) | Anasayfa + Yorumlar |
-| **Doktor alıntısı** (İnsan dokunuşu) | Anasayfa + Hakkımızda |
-| **Şeffaflık sözü** (kaygı azaltıcı) | Hizmetler + Hakkımızda |
-| **FAQ anti-anxiety** (olumsuz yorumlar, fiyat, stres) | Anasayfa |
-
----
-
-## ⚙️ Yayına almadan önce değiştirmeniz gerekenler
-
-Tüm dosyalarda aşağıdaki placeholder'ları gerçek bilgilerle değiştirin (Find & Replace tek seferde hepsini halleder):
-
-| Placeholder | Ne ile değiştirin |
-|---|---|
-| `+903240000000` | Kliniğin gerçek telefon numarası (boşluksuz, uluslararası formatta) |
-| `+90 324 000 00 00` | Gösterim için biçimli telefon (footer, iletişim kartı) |
-| `https://wa.me/903240000000` | WhatsApp linki — aynı numara, başında + yok |
-| `20 yıllık / 2003'ten beri` | Kliniğin gerçek kuruluş yılına göre güncelleyin |
-| `4.8 / 5000+` | Gerçek Google puanı ve müşteri sayısı |
-| Yorumlar (`yorumlar.html`) | Gerçek, izinle alınmış Google yorumlarıyla değiştirin — gerçek isimler, tarihler |
-| Hero SVG illüstrasyonları | İsterseniz gerçek klinik fotoğrafları ile değiştirilebilir |
-
-**Google Maps:** Hazır iframe doğru adresi gösteriyor. Özel bir Google Places URL'iniz varsa iletişim sayfasındaki `iframe src` değerini değiştirin.
-
-**SEO:** Her sayfanın `<title>` ve `<meta description>` optimize edildi. Eklemeniz önerilen: Open Graph resim (`og:image`), Google Search Console kaydı, Google My Business bağlantısı.
-
----
-
-## 🖼 Görsel öneriler (ileride ekleyebilirsiniz)
-
-Şu anda tüm illüstrasyonlar **inline SVG** — yükleme hızlı, düzenleme kolay. İleride koyabileceğiniz gerçek fotoğraflar:
-
-- Hero'da Dr. Ömer Bey bir kediyi muayene ederken (doğal ışık, sıcak ton)
-- Hakkımızda'da klinik iç mekan (sakin, kitaplık, oturma köşesi)
-- Hizmetler bloklarında gerçek kedi/köpek yakın çekim
-- Yorumlar sayfasında sahiplerin pet'leriyle gülümseyen kareleri (izinle)
-
-Fotoğrafları `assets/img/` altına koyup, ilgili `<svg>` bloklarını `<img src="assets/img/dosya.jpg" alt="...">` ile değiştirmek yeterli.
-
----
-
-## 📱 Mobile-first & performans
-
-- Mobilde sticky alt bar, desktop'ta floating WhatsApp.
-- Hamburger menü 1024px altında aktif.
-- Font preconnect + swap ile flicker yok.
-- Tüm görüntüler SVG = 0 yavaş yüklenen raster.
-- Lighthouse tahmini: 95+ Performance, 100 Accessibility, 100 Best Practices, 95+ SEO.
-
----
-
-## ✉️ Son söz
-
-Bu siteyi açıp kapatan bir pet sahibi değil — endişeli, hayvanını seven, "doğru yerde miyim?" diye soran bir insan. Her kelime, her renk, her buton bu soruya yanıt vermek için tasarlandı:
-
-> "Evet. Buradasınız. Merak etmeyin — biz varız."
-
-İyi yayınlar. 🐾
+© BlueVet Veteriner Kliniği · Mersin 🐾

@@ -1,0 +1,19 @@
+{
+  "name": "bluevet-veteriner-klinigi",
+  "version": "1.0.0",
+  "description": "BlueVet Veteriner Kliniği — Mersin · 7/24 premium veteriner hizmeti",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "veteriner",
+    "mersin",
+    "bluevet",
+    "yenisehir",
+    "veteriner-klinigi"
+  ],
+  "author": "BlueVet Veteriner Kliniği",
+  "license": "UNLICENSED"
+}
