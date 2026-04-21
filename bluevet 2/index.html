@@ -1,0 +1,1177 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<meta name="theme-color" content="#0A2540" />
+<title>BlueVet Veteriner Kliniği · Mersin · 7/24 Açık</title>
+<meta name="description" content="Mersin Yenişehir'de 7/24 hizmet veren premium veteriner kliniği. Kedi, köpek ve egzotik hayvan sağlığında güvenilir, etik ve şefkatli bakım. Veteriner Hekim Ömer ile tanışın." />
+<meta name="keywords" content="Mersin veteriner, Yenişehir veteriner, 7/24 veteriner, BlueVet, kedi sağlığı, köpek sağlığı, acil veteriner Mersin" />
+<meta property="og:title" content="BlueVet Veteriner Kliniği — Mersin" />
+<meta property="og:description" content="Dostunuz en iyi bakımı hak ediyor. 7/24 açık premium veteriner hizmeti." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A2540'/><path d='M16 22c-3 0-5-2-5-4.5 0-2 1.5-3.5 3-3.5 1 0 1.5.5 2 1 .5-.5 1-1 2-1 1.5 0 3 1.5 3 3.5C21 20 19 22 16 22z' fill='%23F5E6D3'/><circle cx='12' cy='12' r='1.6' fill='%23F5E6D3'/><circle cx='20' cy='12' r='1.6' fill='%23F5E6D3'/><circle cx='9' cy='15' r='1.3' fill='%23F5E6D3'/><circle cx='23' cy='15' r='1.3' fill='%23F5E6D3'/></svg>" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ========= RESET & BASE ========= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.6;
+  color:#1a2332;
+  background:#FAF9F6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+  min-height:100vh;
+  min-height:100dvh;
+}
+/* iOS safe areas */
+body{
+  padding-left:env(safe-area-inset-left);
+  padding-right:env(safe-area-inset-right);
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none}
+
+/* ========= DESIGN TOKENS ========= */
+:root{
+  --navy:#0A2540;
+  --navy-2:#0F3460;
+  --blue:#1E4D8C;
+  --blue-soft:#E8F0FB;
+  --cream:#FAF7F2;
+  --cream-2:#F5F1EA;
+  --paper:#FAF9F6;
+  --ink:#1a2332;
+  --ink-soft:#5A6578;
+  --line:#E5E9F0;
+  --peach:#FFD6BA;
+  --peach-soft:#FFF2E8;
+  --mint:#D4EDE4;
+  --mint-soft:#ECF7F2;
+  --gold:#C9A96E;
+  --shadow-sm:0 2px 8px rgba(10,37,64,.06);
+  --shadow:0 10px 40px rgba(10,37,64,.08);
+  --shadow-lg:0 20px 60px rgba(10,37,64,.12);
+  --radius:18px;
+  --radius-lg:28px;
+  --container:1240px;
+}
+
+/* ========= TYPOGRAPHY ========= */
+h1,h2,h3,h4{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:500;
+  letter-spacing:-.02em;
+  line-height:1.1;
+  color:var(--navy);
+}
+h1{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:400}
+h2{font-size:clamp(2rem,4.2vw,3.2rem)}
+h3{font-size:clamp(1.3rem,2vw,1.6rem);font-weight:500}
+p{color:var(--ink-soft)}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Inter',sans-serif;
+  font-size:.78rem;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--blue);
+}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--blue)}
+
+/* ========= LAYOUT ========= */
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+section{padding:clamp(64px,9vw,120px) 0;position:relative}
+
+/* ========= BUTTONS ========= */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 28px;border-radius:100px;
+  font-weight:600;font-size:.95rem;letter-spacing:.01em;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  white-space:nowrap;
+  will-change:transform;
+  min-height:48px;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 8px 24px rgba(10,37,64,.25)}
+.btn-primary:hover{background:var(--navy-2);transform:translateY(-2px);box-shadow:0 14px 32px rgba(10,37,64,.35)}
+.btn-secondary{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+.btn-secondary:hover{border-color:var(--navy);transform:translateY(-2px)}
+.btn-ghost{color:var(--navy);padding:10px 0}
+.btn-ghost:hover{opacity:.7}
+.btn-accent{background:var(--peach);color:var(--navy)}
+.btn-accent:hover{background:#FFC69A;transform:translateY(-2px)}
+
+/* ========= HEADER ========= */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px 0;
+  padding-top:calc(18px + env(safe-area-inset-top));
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  background:rgba(250,249,246,.72);
+  border-bottom:1px solid transparent;
+  transition:all .4s ease;
+}
+.header.scrolled{
+  background:rgba(250,249,246,.92);
+  border-bottom-color:var(--line);
+  padding:12px 0;
+  box-shadow:var(--shadow-sm);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:1.35rem;font-weight:500;color:var(--navy);letter-spacing:-.02em}
+.logo-mark{
+  width:40px;height:40px;border-radius:12px;
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  display:grid;place-items:center;color:#fff;
+  box-shadow:0 6px 16px rgba(10,37,64,.25);
+}
+.logo-mark svg{width:22px;height:22px}
+.logo small{display:block;font-family:'Inter',sans-serif;font-size:.65rem;font-weight:500;color:var(--ink-soft);letter-spacing:.22em;text-transform:uppercase;margin-top:2px}
+
+.nav{display:flex;align-items:center;gap:34px}
+.nav a{font-size:.92rem;font-weight:500;color:var(--ink);position:relative;transition:color .25s}
+.nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--navy);transition:width .3s}
+.nav a:hover{color:var(--navy)}
+.nav a:hover::after{width:100%}
+
+.header-cta{display:flex;align-items:center;gap:12px}
+.header-phone{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--navy);font-size:.92rem}
+.header-phone svg{width:16px;height:16px}
+
+.menu-toggle{display:none;width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid var(--line);place-items:center}
+.menu-toggle span{display:block;width:20px;height:2px;background:var(--navy);position:relative;transition:.3s}
+.menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--navy);transition:.3s}
+.menu-toggle span::before{top:-6px}.menu-toggle span::after{top:6px}
+.menu-toggle.open span{background:transparent}
+.menu-toggle.open span::before{transform:rotate(45deg) translate(4px,4px)}
+.menu-toggle.open span::after{transform:rotate(-45deg) translate(4px,-4px)}
+
+/* ========= HERO ========= */
+.hero{
+  padding-top:140px;padding-bottom:100px;
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 80% 20%, rgba(232,240,251,.6), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 10% 90%, rgba(255,214,186,.25), transparent 60%),
+    var(--paper);
+}
+.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.hero-content{position:relative;z-index:2}
+.hero h1{margin:24px 0 24px}
+.hero h1 em{font-style:italic;color:var(--blue);font-weight:300}
+.hero-sub{font-size:1.12rem;color:var(--ink-soft);max-width:520px;margin-bottom:40px;line-height:1.7}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+
+.hero-trust{display:flex;align-items:center;gap:28px;padding-top:32px;border-top:1px solid var(--line);flex-wrap:wrap}
+.trust-stat strong{display:block;font-family:'Fraunces',serif;font-size:1.8rem;color:var(--navy);font-weight:500;line-height:1}
+.trust-stat span{font-size:.82rem;color:var(--ink-soft);letter-spacing:.02em}
+.trust-sep{width:1px;height:34px;background:var(--line)}
+
+.hero-media{position:relative;aspect-ratio:4/5;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
+.hero-media img{width:100%;height:100%;object-fit:cover}
+.hero-media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(10,37,64,.35));
+}
+.hero-badge{
+  position:absolute;bottom:24px;left:24px;right:24px;z-index:2;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(14px);
+  padding:18px 22px;border-radius:16px;
+  display:flex;align-items:center;gap:16px;
+  box-shadow:var(--shadow);
+}
+.hero-badge-icon{
+  width:44px;height:44px;border-radius:12px;
+  background:var(--mint);display:grid;place-items:center;
+  flex-shrink:0;
+}
+.hero-badge-icon::after{
+  content:"";width:10px;height:10px;border-radius:50%;background:#18A36A;
+  box-shadow:0 0 0 4px rgba(24,163,106,.2);animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(24,163,106,.3)}50%{box-shadow:0 0 0 8px rgba(24,163,106,0)}}
+.hero-badge strong{display:block;color:var(--navy);font-size:.95rem;font-weight:600}
+.hero-badge span{font-size:.8rem;color:var(--ink-soft)}
+
+.hero-floating{
+  position:absolute;background:#fff;border-radius:16px;padding:14px 18px;
+  box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;
+  animation:float 6s ease-in-out infinite;
+}
+.hero-floating.top{top:8%;left:-24px;animation-delay:.5s}
+.hero-floating.bottom{top:50%;right:-30px;animation-delay:1.5s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero-floating-emoji{font-size:1.5rem}
+.hero-floating strong{font-size:.85rem;color:var(--navy);font-weight:600;display:block}
+.hero-floating span{font-size:.72rem;color:var(--ink-soft)}
+
+/* ========= MARQUEE / TRUST BAR ========= */
+.marquee{
+  background:var(--navy);color:#fff;padding:22px 0;overflow:hidden;
+  position:relative;
+}
+.marquee-track{display:flex;gap:60px;white-space:nowrap;animation:scroll 40s linear infinite}
+.marquee-item{display:inline-flex;align-items:center;gap:14px;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;opacity:.9}
+.marquee-item svg{width:18px;height:18px;opacity:.7}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ========= ABOUT ========= */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+.about-visual{position:relative}
+.about-img{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow-lg);position:relative}
+.about-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.about-img:hover img{transform:scale(1.04)}
+.about-img-2{
+  position:absolute;bottom:-40px;right:-30px;
+  width:55%;aspect-ratio:1;border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);
+  border:8px solid var(--paper);
+}
+.about-img-2 img{width:100%;height:100%;object-fit:cover}
+
+.about-content h2{margin:20px 0 24px}
+.about-lead{font-size:1.05rem;color:var(--ink);margin-bottom:20px;line-height:1.75}
+.about-content p{margin-bottom:18px}
+
+.signature{
+  margin-top:36px;padding:24px;border-radius:var(--radius);
+  background:linear-gradient(135deg,var(--cream),var(--blue-soft));
+  display:flex;align-items:center;gap:20px;
+}
+.sig-avatar{
+  width:68px;height:68px;border-radius:50%;
+  background:#fff;display:grid;place-items:center;
+  font-family:'Fraunces',serif;color:var(--navy);font-size:1.4rem;
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+}
+.sig-avatar img{width:100%;height:100%;object-fit:cover}
+.sig-info strong{display:block;color:var(--navy);font-size:1.05rem;font-family:'Fraunces',serif;font-weight:500}
+.sig-info span{font-size:.88rem;color:var(--ink-soft)}
+
+/* ========= SERVICES ========= */
+.services{background:linear-gradient(180deg,var(--paper),var(--cream-2) 80%)}
+.section-head{text-align:center;max-width:680px;margin:0 auto 64px}
+.section-head h2{margin:20px 0 18px}
+.section-head p{font-size:1.05rem}
+
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{
+  background:#fff;padding:40px 32px;border-radius:var(--radius-lg);
+  border:1px solid var(--line);
+  transition:all .5s cubic-bezier(.4,0,.2,1);
+  position:relative;overflow:hidden;
+  cursor:pointer;
+}
+.service-card::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  opacity:0;transition:opacity .5s;z-index:0;
+}
+.service-card>*{position:relative;z-index:1}
+.service-icon{
+  width:64px;height:64px;border-radius:18px;
+  background:var(--blue-soft);display:grid;place-items:center;
+  margin-bottom:28px;transition:all .5s;
+}
+.service-icon svg{width:30px;height:30px;color:var(--navy);transition:color .5s}
+.service-card h3{margin-bottom:14px;transition:color .5s}
+.service-card p{font-size:.95rem;transition:color .5s}
+.service-card ul{list-style:none;margin-top:20px;padding-top:20px;border-top:1px solid var(--line);transition:border-color .5s}
+.service-card ul li{font-size:.88rem;color:var(--ink-soft);padding:4px 0;display:flex;align-items:center;gap:8px;transition:color .5s}
+.service-card ul li::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0;transition:background .5s}
+
+.service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent}
+.service-card:hover::before{opacity:1}
+.service-card:hover .service-icon{background:rgba(255,255,255,.15);transform:rotate(-6deg) scale(1.05)}
+.service-card:hover .service-icon svg{color:#fff}
+.service-card:hover h3{color:#fff}
+.service-card:hover p{color:rgba(255,255,255,.8)}
+.service-card:hover ul{border-top-color:rgba(255,255,255,.15)}
+.service-card:hover ul li{color:rgba(255,255,255,.75)}
+.service-card:hover ul li::before{background:var(--peach)}
+
+/* ========= TRUST / REVIEWS ========= */
+.reviews{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.reviews::before{
+  content:"";position:absolute;top:-200px;right:-200px;width:500px;height:500px;
+  border-radius:50%;background:radial-gradient(circle,rgba(30,77,140,.3),transparent 70%);
+}
+.reviews::after{
+  content:"";position:absolute;bottom:-200px;left:-200px;width:500px;height:500px;
+  border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.15),transparent 70%);
+}
+.reviews .container{position:relative;z-index:1}
+.reviews .section-head h2{color:#fff}
+.reviews .section-head p{color:rgba(255,255,255,.7)}
+.reviews .eyebrow{color:var(--peach)}
+.reviews .eyebrow::before{background:var(--peach)}
+
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.review-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  padding:36px 30px;border-radius:var(--radius-lg);
+  backdrop-filter:blur(10px);
+  transition:all .5s;
+  position:relative;
+}
+.review-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.07);border-color:rgba(201,169,110,.3)}
+.review-stars{display:flex;gap:2px;margin-bottom:20px}
+.review-stars svg{width:18px;height:18px;color:var(--gold)}
+.review-text{font-family:'Fraunces',serif;font-size:1.15rem;line-height:1.6;color:#fff;font-weight:400;margin-bottom:28px;font-style:italic}
+.review-author{display:flex;align-items:center;gap:14px}
+.review-avatar{
+  width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg,var(--peach),var(--gold));
+  display:grid;place-items:center;color:var(--navy);font-weight:600;
+  font-family:'Fraunces',serif;
+}
+.review-author strong{display:block;font-size:.95rem;color:#fff;font-weight:500}
+.review-author span{font-size:.82rem;color:rgba(255,255,255,.6)}
+
+/* ========= WHY US ========= */
+.whyus-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.whyus-intro{position:sticky;top:120px}
+.whyus-list{display:grid;gap:24px}
+.why-item{
+  background:#fff;padding:32px;border-radius:var(--radius);
+  border:1px solid var(--line);
+  display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;
+  transition:all .4s;
+}
+.why-item:hover{border-color:var(--navy);transform:translateX(6px);box-shadow:var(--shadow)}
+.why-num{
+  font-family:'Fraunces',serif;
+  font-size:2.4rem;font-weight:400;
+  color:var(--blue);line-height:.9;
+  font-feature-settings:"tnum";
+  font-style:italic;
+}
+.why-item h3{margin-bottom:8px}
+.why-item p{font-size:.95rem;margin:0}
+
+/* ========= HOURS & LOCATION ========= */
+.hours{background:linear-gradient(180deg,var(--cream-2),var(--paper))}
+.hours-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:stretch}
+.hours-card{
+  background:#fff;padding:48px;border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);border:1px solid var(--line);
+}
+.hours-list{margin-top:32px;display:grid;gap:14px}
+.hours-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 0;border-bottom:1px solid var(--line);
+}
+.hours-row:last-child{border-bottom:0}
+.hours-row strong{color:var(--navy);font-weight:500}
+.hours-row span{color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.hours-row.open strong::after{
+  content:"Açık";margin-left:10px;padding:2px 10px;border-radius:100px;
+  background:var(--mint);color:#18A36A;font-size:.7rem;font-weight:600;letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.emergency-badge{
+  margin-top:28px;padding:20px;border-radius:var(--radius);
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  color:#fff;display:flex;align-items:center;gap:16px;
+}
+.emergency-badge svg{width:28px;height:28px;flex-shrink:0;color:var(--peach)}
+.emergency-badge strong{display:block;color:#fff;font-size:1rem}
+.emergency-badge span{font-size:.85rem;opacity:.85}
+
+.map-card{
+  border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow);
+  position:relative;min-height:480px;
+  background:#fff;
+  display:flex;flex-direction:column;
+}
+.map-embed{flex:1;position:relative;background:#e6ecf3;overflow:hidden}
+.map-embed iframe{width:100%;height:100%;border:0;position:absolute;inset:0}
+.map-footer{padding:28px 32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.map-address strong{display:block;color:var(--navy);font-family:'Fraunces',serif;font-size:1.1rem;font-weight:500}
+.map-address span{font-size:.9rem;color:var(--ink-soft);margin-top:2px;display:block}
+
+/* ========= CTA SECTION ========= */
+.cta{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(30,77,140,.25), transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(255,214,186,.2), transparent 60%),
+    var(--navy);
+  color:#fff;text-align:center;
+}
+.cta-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+.cta h2{color:#fff;margin:20px 0 20px;font-size:clamp(2.2rem,5vw,3.6rem)}
+.cta h2 em{font-style:italic;color:var(--peach);font-weight:300}
+.cta p{color:rgba(255,255,255,.8);font-size:1.1rem;margin-bottom:40px;max-width:560px;margin-inline:auto}
+.cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cta .btn-primary{background:#fff;color:var(--navy)}
+.cta .btn-primary:hover{background:var(--peach)}
+.cta .btn-secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.25)}
+.cta .btn-secondary:hover{border-color:#fff;background:rgba(255,255,255,.05)}
+.cta .eyebrow{color:var(--peach)}
+.cta .eyebrow::before{background:var(--peach)}
+
+.paws{position:absolute;opacity:.06;font-size:220px;pointer-events:none}
+.paws.p1{top:10%;left:5%;transform:rotate(-20deg)}
+.paws.p2{bottom:10%;right:5%;transform:rotate(15deg)}
+
+/* ========= FOOTER ========= */
+.footer{background:#061A30;color:rgba(255,255,255,.75);padding:80px 0 32px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+.footer-logo{color:#fff;margin-bottom:20px}
+.footer-brand p{color:rgba(255,255,255,.6);font-size:.92rem;line-height:1.7;margin-bottom:24px;max-width:320px}
+.social-links{display:flex;gap:10px}
+.social-links a{
+  width:40px;height:40px;border-radius:12px;
+  background:rgba(255,255,255,.06);
+  display:grid;place-items:center;
+  transition:all .3s;
+}
+.social-links a:hover{background:var(--peach);color:var(--navy);transform:translateY(-2px)}
+.social-links svg{width:18px;height:18px}
+
+.footer h4{color:#fff;font-size:.9rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px;font-family:'Inter',sans-serif}
+.footer ul{list-style:none;display:grid;gap:12px}
+.footer ul a{font-size:.92rem;color:rgba(255,255,255,.65);transition:color .25s}
+.footer ul a:hover{color:var(--peach)}
+
+.footer-contact-item{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start}
+.footer-contact-item svg{width:18px;height:18px;color:var(--peach);flex-shrink:0;margin-top:3px}
+.footer-contact-item strong{display:block;color:#fff;font-size:.92rem;font-weight:500}
+.footer-contact-item span{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.5}
+
+.footer-bottom{
+  padding-top:32px;border-top:1px solid rgba(255,255,255,.08);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
+  font-size:.85rem;color:rgba(255,255,255,.5);
+}
+
+/* ========= FLOATING CTAS ========= */
+.floating-ctas{
+  position:fixed;right:20px;bottom:20px;z-index:90;
+  display:flex;flex-direction:column;gap:12px;
+}
+.fab{
+  width:58px;height:58px;border-radius:50%;
+  display:grid;place-items:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  transition:all .3s;
+  color:#fff;
+  position:relative;
+}
+.fab:hover{transform:scale(1.1);box-shadow:0 14px 36px rgba(0,0,0,.3)}
+.fab svg{width:26px;height:26px}
+.fab.wa{background:#25D366}
+.fab.call{background:var(--navy)}
+.fab-label{
+  position:absolute;right:68px;top:50%;transform:translateY(-50%);
+  background:var(--navy);color:#fff;padding:8px 14px;border-radius:100px;
+  font-size:.8rem;font-weight:500;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;
+  transform-origin:right center;
+}
+.fab:hover .fab-label{opacity:1;transform:translateY(-50%) translateX(-4px)}
+
+/* ========= REVEAL ANIMATIONS ========= */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+.reveal-scale{opacity:0;transform:scale(.96) translateY(20px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1)}
+.reveal-scale.in{opacity:1;transform:none}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
+.reveal-left.in{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
+.reveal-right.in{opacity:1;transform:none}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width:960px){
+  .nav,.header-phone{display:none}
+  .menu-toggle{display:grid}
+  .hero{padding-top:110px}
+  .hero-grid,.about-grid,.whyus-grid,.hours-grid{grid-template-columns:1fr;gap:50px}
+  .whyus-intro{position:static}
+  .services-grid,.reviews-grid{grid-template-columns:1fr;gap:18px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
+  .hero-floating{display:none}
+  .about-img-2{right:20px;bottom:-30px;width:45%}
+
+  /* Mobile nav drawer */
+  .nav.open{
+    display:flex;position:fixed;top:74px;left:16px;right:16px;
+    background:#fff;border-radius:var(--radius);padding:24px;
+    flex-direction:column;align-items:flex-start;gap:20px;
+    box-shadow:var(--shadow-lg);
+    animation:slideDown .3s ease;
+  }
+  @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+}
+@media (max-width:640px){
+  .container{padding:0 20px}
+  section{padding:64px 0}
+  .hero{padding-top:100px;padding-bottom:60px}
+  .hero-grid{gap:40px}
+  .hero-ctas{gap:10px}
+  .hero-ctas .btn{flex:1;min-width:140px;padding:14px 20px;font-size:.9rem}
+  .hero-trust{gap:18px}
+  .trust-sep{display:none}
+  .trust-stat strong{font-size:1.5rem}
+  .hero-media{aspect-ratio:4/4.4;border-radius:22px}
+  .hero-badge{left:16px;right:16px;bottom:16px;padding:14px 18px}
+  .about-grid{gap:60px}
+  .about-img-2{right:16px;bottom:-24px;width:42%;border-width:6px}
+  .signature{padding:20px;gap:16px}
+  .sig-avatar{width:56px;height:56px;font-size:1.2rem}
+  .hours-card{padding:32px 24px}
+  .emergency-badge{padding:16px;gap:14px}
+  .map-card{min-height:420px}
+  .map-embed{min-height:280px}
+  .map-footer{padding:20px 22px;flex-direction:column;align-items:flex-start}
+  .map-footer .btn{width:100%}
+  .footer{padding:56px 0 28px;padding-bottom:calc(28px + env(safe-area-inset-bottom))}
+  .footer-grid{grid-template-columns:1fr;gap:40px;margin-bottom:40px}
+  .service-card{padding:32px 24px}
+  .review-card{padding:28px 24px}
+  .review-text{font-size:1.05rem}
+  .floating-ctas{right:14px;bottom:calc(14px + env(safe-area-inset-bottom))}
+  .fab{width:52px;height:52px}
+  .fab svg{width:22px;height:22px}
+  .fab-label{display:none}
+  .header-cta .btn:not(.btn-primary){display:none}
+  .header{padding-top:calc(18px + env(safe-area-inset-top))}
+  .header.scrolled{padding-top:calc(12px + env(safe-area-inset-top))}
+  .cta-buttons{width:100%}
+  .cta-buttons .btn{width:100%;max-width:360px}
+  .why-item{padding:24px 20px;gap:16px}
+  .why-num{font-size:2rem}
+}
+
+/* Extra-small devices (iPhone SE, Galaxy S Mini, folded) */
+@media (max-width:380px){
+  .container{padding:0 16px}
+  h1{font-size:2.1rem}
+  h2{font-size:1.7rem}
+  .hero-sub{font-size:1rem}
+  .logo small{display:none}
+  .logo{font-size:1.2rem}
+  .logo-mark{width:36px;height:36px;border-radius:10px}
+  .header-phone{display:none}
+  .hero-ctas{flex-direction:column}
+  .hero-ctas .btn{width:100%}
+  .hero-trust{gap:14px}
+  .trust-stat strong{font-size:1.3rem}
+  .trust-stat span{font-size:.74rem}
+  .service-card{padding:28px 22px}
+  .service-card h3{font-size:1.2rem}
+  .hours-card{padding:28px 22px}
+  .signature{flex-direction:column;text-align:center;padding:22px}
+  .about-img-2{width:38%;right:10px}
+  .reviews-grid,.services-grid,.whyus-list{gap:14px}
+  .btn{padding:14px 22px;font-size:.88rem}
+}
+
+/* Landscape phones */
+@media (max-width:960px) and (orientation:landscape) and (max-height:500px){
+  .hero{padding-top:90px;padding-bottom:40px}
+  .hero-grid{grid-template-columns:1fr 1fr;gap:30px}
+  section{padding:50px 0}
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .reveal,.reveal-scale,.reveal-left,.reveal-right{opacity:1;transform:none}
+}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#" class="logo" aria-label="BlueVet Veteriner Kliniği">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 17c-2.4 0-4-1.7-4-3.6 0-1.6 1.2-2.8 2.4-2.8.8 0 1.2.4 1.6.8.4-.4.8-.8 1.6-.8 1.2 0 2.4 1.2 2.4 2.8 0 1.9-1.6 3.6-4 3.6z" fill="currentColor"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="5.5" cy="11" r="1" fill="currentColor"/><circle cx="18.5" cy="11" r="1" fill="currentColor"/></svg>
+      </span>
+      <span>BlueVet<small>Veteriner Kliniği</small></span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Ana menü">
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#yorumlar">Yorumlar</a>
+      <a href="#neden-biz">Neden Biz</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="tel:+905307392583" class="header-phone" aria-label="Bizi arayın">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        0530 739 25 83
+      </a>
+      <a href="#randevu" class="btn btn-primary">Randevu Al</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menüyü aç/kapa" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="eyebrow reveal">7/24 Açık · Mersin Yenişehir</span>
+        <h1 class="reveal reveal-delay-1">Dostunuza hak ettiği <em>şefkatli ve güvenilir</em> bakım.</h1>
+        <p class="hero-sub reveal reveal-delay-2">
+          BlueVet Veteriner Kliniği; kedi, köpek ve egzotik dostlarınıza etik, dürüst ve uzman bakım sunar.
+          Mersin Yenişehir'de 7/24 hizmet veren güven odaklı kliniğimizde kuyruklu aileniz emin ellerde.
+        </p>
+        <div class="hero-ctas reveal reveal-delay-3">
+          <a href="#randevu" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Randevu Al
+          </a>
+          <a href="tel:+905307392583" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Hemen Ara
+          </a>
+        </div>
+
+        <div class="hero-trust reveal reveal-delay-4">
+          <div class="trust-stat">
+            <strong>7/24</strong>
+            <span>Acil hizmet</span>
+          </div>
+          <span class="trust-sep"></span>
+          <div class="trust-stat">
+            <strong>10+</strong>
+            <span>Yıllık tecrübe</span>
+          </div>
+          <span class="trust-sep"></span>
+          <div class="trust-stat">
+            <strong>4.9★</strong>
+            <span>Sahip puanı</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media reveal-scale reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=900&q=80" alt="Veteriner sevecen bir şekilde köpeği muayene ediyor" loading="eager" />
+        <div class="hero-floating top">
+          <span class="hero-floating-emoji" aria-hidden="true">🐾</span>
+          <div>
+            <strong>Acil Müdahale</strong>
+            <span>7 gün 24 saat</span>
+          </div>
+        </div>
+        <div class="hero-floating bottom">
+          <span class="hero-floating-emoji" aria-hidden="true">💙</span>
+          <div>
+            <strong>Dürüst Fiyat</strong>
+            <span>Gereksiz işlem yok</span>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <div class="hero-badge-icon" aria-hidden="true"></div>
+          <div>
+            <strong>Şu anda açığız</strong>
+            <span>Hemen arayın · Ön kayıt yapın</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Etik Tedavi</span>
+    <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 7/24 Açık</span>
+    <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> Dürüst Fiyatlandırma</span>
+    <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> 4.9★ Sahip Puanı</span>
+    <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Uzman Kadro</span>
+    <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg> Mutlu Patiler</span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Etik Tedavi</span>
+    <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 7/24 Açık</span>
+    <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> Dürüst Fiyatlandırma</span>
+    <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> 4.9★ Sahip Puanı</span>
+    <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Uzman Kadro</span>
+    <span class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg> Mutlu Patiler</span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section id="hakkimizda">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal-left">
+        <div class="about-img">
+          <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=900&q=85" alt="Şefkatle bakılan sevimli kedi portresi" loading="lazy" />
+        </div>
+        <div class="about-img-2">
+          <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=500&q=80" alt="Muayene edilen sevimli köpek" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="about-content reveal-right">
+        <span class="eyebrow">Hakkımızda</span>
+        <h2>Mersin'in güvendiği klinik. <em style="font-style:italic;color:var(--blue);font-weight:300">Patilere adanmış bir yaşam.</em></h2>
+        <p class="about-lead">
+          BlueVet olarak biz, bir klinikten daha fazlasıyız. Kuyruklu dostlarınızın ikinci evi, sizin de güvenle omuz dayadığınız bir destek noktasıyız.
+        </p>
+        <p>
+          10 yılı aşkın sahada edinilmiş uzmanlık, modern tıbbi donanım ve en önemlisi hayvan sevgisiyle
+          yoğurulmuş bir ekibiz. Her müdahalede tek bir pusulamız var: dostunuzun iyiliği. Gereksiz işlem yapmaz,
+          saydam iletişim kurar, her adımı sizinle paylaşırız.
+        </p>
+
+        <div class="signature">
+          <div class="sig-avatar" aria-hidden="true">Ö</div>
+          <div class="sig-info">
+            <strong>Vet. Hek. Ömer</strong>
+            <span>Kurucu Veteriner Hekim · 10+ yıllık tecrübe</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="hizmetler">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Hizmetlerimiz</span>
+      <h2>Her pati için uzmanlaşmış bakım</h2>
+      <p>Rutin muayeneden acil müdahaleye, aşılamadan diş sağlığına — dostunuzun ihtiyaç duyduğu her şey tek çatı altında.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c1.5 2 1.5 4 0 6-1.5-2-1.5-4 0-6zm-6 4c2 0 3.5 1 4 3-2 0-3.5-1-4-3zm12 0c-2 0-3.5 1-4 3 2 0 3.5-1 4-3zM5 13a7 7 0 0 1 14 0c0 5-3.5 8-7 8s-7-3-7-8z"/></svg>
+        </div>
+        <h3>Kedi Sağlığı</h3>
+        <p>Kedinizin zarif yapısına özel, stres seviyesini minimumda tutan ekipman ve yaklaşım.</p>
+        <ul>
+          <li>Aşılama & iç-dış parazit</li>
+          <li>Kısırlaştırma operasyonları</li>
+          <li>Dental bakım</li>
+          <li>Geriatrik takip</li>
+        </ul>
+      </article>
+
+      <article class="service-card reveal reveal-delay-1">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="14" r="6"/><path d="M8 5l2 3M16 5l-2 3M6 9l-2 1M18 9l2 1"/></svg>
+        </div>
+        <h3>Köpek Sağlığı</h3>
+        <p>Yavrudan yaşlılık dönemine tüm yaşam evreleri için bütünsel köpek sağlığı programı.</p>
+        <ul>
+          <li>Karma & kuduz aşıları</li>
+          <li>Ortopedi & yumuşak doku cerrahisi</li>
+          <li>Beslenme danışmanlığı</li>
+          <li>Davranış değerlendirmesi</li>
+        </ul>
+      </article>
+
+      <article class="service-card reveal reveal-delay-2">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Genel Bakım</h3>
+        <p>Check-up, kan tahlili, ultrason ve görüntüleme — koruyucu hekimliğin her detayı.</p>
+        <ul>
+          <li>Yıllık check-up paketleri</li>
+          <li>Laboratuvar & tahlil</li>
+          <li>Dahiliye muayene</li>
+          <li>Mikroçip uygulaması</li>
+        </ul>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Acil Müdahale 7/24</h3>
+        <p>Kritik anlarda tek bir aramayla yanındayız. Gece, hafta sonu, tatil — kapımız her zaman açık.</p>
+        <ul>
+          <li>Travma & yaralanma</li>
+          <li>Zehirlenme müdahalesi</li>
+          <li>Doğum desteği</li>
+          <li>Yoğun bakım</li>
+        </ul>
+      </article>
+
+      <article class="service-card reveal reveal-delay-1">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Aşı & Koruyucu Hekimlik</h3>
+        <p>Zamanında aşı, doğru koruma. Dostunuzun bağışıklığını bilimsel rehberlerle güçlendiriyoruz.</p>
+        <ul>
+          <li>Karma aşı programı</li>
+          <li>Kuduz sertifikası</li>
+          <li>Pasaport işlemleri</li>
+          <li>Parazit koruma takvimi</li>
+        </ul>
+      </article>
+
+      <article class="service-card reveal reveal-delay-2">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+        </div>
+        <h3>Estetik & Bakım</h3>
+        <p>Tıraş, tırnak, kulak temizliği ve özel bakım — sağlık kadar konforu da önemsiyoruz.</p>
+        <ul>
+          <li>Profesyonel tıraş</li>
+          <li>Tırnak & kulak bakımı</li>
+          <li>Tedavi edici banyo</li>
+          <li>Dermatolojik destek</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="yorumlar">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Sahiplerden</span>
+      <h2>Kelimeler sahiplerden, güven patilerden.</h2>
+      <p>Mersinli kuyruklu ailelerin BlueVet deneyimi:</p>
+    </div>
+
+    <div class="reviews-grid">
+      <article class="review-card reveal">
+        <div class="review-stars" aria-label="5 yıldız">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">"Güler yüzlü ve ilgili bir ekip. Kedim çok stresli bir hastaydı, sakinleştirip şefkatle baktılar. Artık başka bir vete gitmeyi düşünmüyoruz."</p>
+        <div class="review-author">
+          <div class="review-avatar">E</div>
+          <div>
+            <strong>Elif Y.</strong>
+            <span>Mia'nın sahibi · Yenişehir</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="review-card reveal reveal-delay-1">
+        <div class="review-stars" aria-label="5 yıldız">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">"Gereksiz işlem yapmaz, net konuşur. Köpeğimin durumunu tüm alternatifleriyle anlattı ve bizi yönlendirdi. Mersin'de en güvendiğim veteriner."</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div>
+            <strong>Mert A.</strong>
+            <span>Paşa'nın sahibi · Mezitli</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="review-card reveal reveal-delay-2">
+        <div class="review-stars" aria-label="5 yıldız">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">"Gece 02:00'da acil geldik, Ömer Bey hemen müdahale etti. Güvenilir bir veteriner. Dostumuzun hayatı emin ellerde olduğu için rahatız."</p>
+        <div class="review-author">
+          <div class="review-avatar">Z</div>
+          <div>
+            <strong>Zeynep K.</strong>
+            <span>Luna'nın sahibi · Akdeniz</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section id="neden-biz">
+  <div class="container">
+    <div class="whyus-grid">
+      <div class="whyus-intro reveal-left">
+        <span class="eyebrow">Neden BlueVet?</span>
+        <h2 style="margin:20px 0 22px">Çünkü farkımız, <em style="font-style:italic;color:var(--blue);font-weight:300">kalbimizde başlar.</em></h2>
+        <p>
+          Modern veteriner hekimliğini, yürekten bir bağlılıkla birleştiriyoruz.
+          Her karar; dostunuzun konforu, sizin ise içiniz rahat olsun diye alınır.
+        </p>
+        <a href="#randevu" class="btn btn-primary" style="margin-top:30px">Randevu Oluştur</a>
+      </div>
+
+      <div class="whyus-list">
+        <div class="why-item reveal-right">
+          <span class="why-num">01</span>
+          <div>
+            <h3>Dürüst Fiyatlandırma</h3>
+            <p>Gerekmeyen hiçbir işlem önerilmez. Muayene öncesi tüm maliyet seçenekleri şeffafça paylaşılır.</p>
+          </div>
+        </div>
+        <div class="why-item reveal-right reveal-delay-1">
+          <span class="why-num">02</span>
+          <div>
+            <h3>Etik Tedavi</h3>
+            <p>Hayvan refahı ve hasta haklarını önceliklendiren yaklaşım. Müdahale ancak gerçekten gerekliyse yapılır.</p>
+          </div>
+        </div>
+        <div class="why-item reveal-right reveal-delay-2">
+          <span class="why-num">03</span>
+          <div>
+            <h3>Tecrübeli Hekim</h3>
+            <p>10 yılı aşkın saha deneyimi. Vet. Hek. Ömer önderliğinde, sürekli eğitimle güncel kalan uzman kadro.</p>
+          </div>
+        </div>
+        <div class="why-item reveal-right reveal-delay-3">
+          <span class="why-num">04</span>
+          <div>
+            <h3>7/24 Açık Klinik</h3>
+            <p>Acil anlarda beklemek yok. Hafta içi tam zamanlı 24 saat, hafta sonu geniş saatlerle yanınızdayız.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOURS & LOCATION ============ -->
+<section class="hours" id="iletisim">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Çalışma Saatleri & Konum</span>
+      <h2>Kapımız size ve patinize açık</h2>
+      <p>Mersin Yenişehir'in kalbinde, kolay ulaşılabilir konumda.</p>
+    </div>
+
+    <div class="hours-grid">
+      <div class="hours-card reveal-left">
+        <span class="eyebrow">Çalışma Saatleri</span>
+        <h3 style="margin-top:12px;font-size:1.4rem">Her zaman buradayız</h3>
+        <div class="hours-list">
+          <div class="hours-row open">
+            <strong>Pazartesi – Cuma</strong>
+            <span>24 saat açık</span>
+          </div>
+          <div class="hours-row open">
+            <strong>Cumartesi</strong>
+            <span>09:00 – 22:00</span>
+          </div>
+          <div class="hours-row open">
+            <strong>Pazar</strong>
+            <span>10:00 – 20:00</span>
+          </div>
+          <div class="hours-row open">
+            <strong>Resmi Tatiller</strong>
+            <span>Acil nöbet devam eder</span>
+          </div>
+        </div>
+
+        <div class="emergency-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+          <div>
+            <strong>Acil durumda beklemeyin</strong>
+            <span>0530 739 25 83 — gece gündüz ulaşılabilir</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-card reveal-right">
+        <div class="map-embed">
+          <iframe
+            title="BlueVet Veteriner Kliniği konumu"
+            loading="lazy"
+            src="https://www.google.com/maps?q=Limonluk+Mah.+İsmet+İnönü+Bulvarı+No:312B,+Yenişehir/Mersin&output=embed"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+        <div class="map-footer">
+          <div class="map-address">
+            <strong>BlueVet Veteriner Kliniği</strong>
+            <span>Limonluk Mah. İsmet İnönü Bulvarı No:312B, Yenişehir / Mersin</span>
+          </div>
+          <a href="https://maps.google.com/?q=Limonluk+Mah.+İsmet+İnönü+Bulvarı+No:312B+Yenişehir+Mersin" target="_blank" rel="noopener" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Yol Tarifi Al
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="randevu">
+  <span class="paws p1" aria-hidden="true">🐾</span>
+  <span class="paws p2" aria-hidden="true">🐾</span>
+  <div class="container cta-inner">
+    <span class="eyebrow reveal">Randevu</span>
+    <h2 class="reveal reveal-delay-1">Dostunuz <em>en iyi bakımı</em> hak ediyor.</h2>
+    <p class="reveal reveal-delay-2">
+      Küçük bir kontrol, büyük bir huzur. Şimdi arayın, yarın için endişelenmeyin.
+      BlueVet ekibi sizi ve kuyruklu dostunuzu görmeyi bekliyor.
+    </p>
+    <div class="cta-buttons reveal reveal-delay-3">
+      <a href="tel:+905307392583" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Hemen Ara · 0530 739 25 83
+      </a>
+      <a href="https://wa.me/905307392583?text=Merhaba%20BlueVet,%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="btn btn-secondary">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo footer-logo">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 17c-2.4 0-4-1.7-4-3.6 0-1.6 1.2-2.8 2.4-2.8.8 0 1.2.4 1.6.8.4-.4.8-.8 1.6-.8 1.2 0 2.4 1.2 2.4 2.8 0 1.9-1.6 3.6-4 3.6z" fill="currentColor"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="5.5" cy="11" r="1" fill="currentColor"/><circle cx="18.5" cy="11" r="1" fill="currentColor"/></svg>
+          </span>
+          <span style="color:#fff">BlueVet<small style="color:rgba(255,255,255,.5)">Veteriner Kliniği</small></span>
+        </a>
+        <p>Mersin Yenişehir'de 7/24 hizmet veren, etik ve şefkatli bakımı ilke edinmiş modern veteriner kliniği.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://wa.me/905307392583" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Hızlı Bağlantılar</h4>
+        <ul>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#hizmetler">Hizmetler</a></li>
+          <li><a href="#yorumlar">Müşteri Yorumları</a></li>
+          <li><a href="#neden-biz">Neden Biz</a></li>
+          <li><a href="#randevu">Randevu Al</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Hizmetler</h4>
+        <ul>
+          <li><a href="#hizmetler">Kedi Sağlığı</a></li>
+          <li><a href="#hizmetler">Köpek Sağlığı</a></li>
+          <li><a href="#hizmetler">Acil Müdahale</a></li>
+          <li><a href="#hizmetler">Aşı Programı</a></li>
+          <li><a href="#hizmetler">Estetik Bakım</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>İletişim</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div>
+            <strong>0530 739 25 83</strong>
+            <span>7/24 ulaşılabilir</span>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <strong>Limonluk Mah.</strong>
+            <span>İsmet İnönü Bulvarı No:312B<br>Yenişehir / Mersin</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 BlueVet Veteriner Kliniği. Tüm hakları saklıdır.</span>
+      <span>Mersin'de sevgiyle tasarlandı 🐾</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING CTAs ============ -->
+<div class="floating-ctas" aria-label="Hızlı iletişim">
+  <a href="https://wa.me/905307392583?text=Merhaba%20BlueVet,%20randevu%20almak%20istiyorum." class="fab wa" target="_blank" rel="noopener" aria-label="WhatsApp'tan mesaj at">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+    <span class="fab-label">WhatsApp'tan Yaz</span>
+  </a>
+  <a href="tel:+905307392583" class="fab call" aria-label="Telefonla ara">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span class="fab-label">Hemen Ara</span>
+  </a>
+</div>
+
+<script>
+// Header scroll effect
+const header = document.getElementById('header');
+const onScroll = () => { header.classList.toggle('scrolled', window.scrollY > 20); };
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+// Mobile menu
+const toggle = document.getElementById('menuToggle');
+const nav = document.getElementById('nav');
+toggle.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  toggle.classList.toggle('open', open);
+  toggle.setAttribute('aria-expanded', open);
+});
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  nav.classList.remove('open'); toggle.classList.remove('open'); toggle.setAttribute('aria-expanded', false);
+}));
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unsubscribe?.(e.target); io.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal,.reveal-scale,.reveal-left,.reveal-right').forEach(el => io.observe(el));
+
+// Subtle parallax on hero media
+const heroMedia = document.querySelector('.hero-media');
+if (heroMedia && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  window.addEventListener('scroll', () => {
+    const y = Math.min(window.scrollY, 500);
+    heroMedia.style.transform = `translateY(${y * 0.05}px)`;
+  }, {passive:true});
+}
+</script>
+
+</body>
+</html>
