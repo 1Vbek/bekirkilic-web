@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Seymen Gezici Hair Studio | Mersin Kadın Kuaförü</title>
+<meta name="description" content="Mersin'de premium kadın kuaförü. Ombre, balyaj, röfle, saç bakımı, gelin saç ve profesyonel makyaj hizmetleri." />
+<meta name="keywords" content="mersin kadın kuaförü, seymen gezici, ombre mersin, balyaj mersin, saç tasarımı mersin" />
+<meta name="author" content="Seymen Gezici Hair Studio" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Seymen Gezici Hair Studio | Mersin Kadın Kuaförü" />
+<meta property="og:description" content="Mersin'de premium kadın kuaförü. Ombre, balyaj, röfle, saç bakımı, gelin saç ve profesyonel makyaj hizmetleri." />
+<meta property="og:type" content="website" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --white:#FFFFFF;
+  --black:#000000;
+  --ink:#0a0a0a;
+  --gray-50:#FAFAFA;
+  --gray-100:#F7F7F7;
+  --gray-200:#EFEFEF;
+  --gray-400:#B5B5B5;
+  --gray-600:#6E6E6E;
+  --beige:#F5F1EB;
+  --beige-2:#EDE6DA;
+  --serif:'Playfair Display','Cormorant Garamond',serif;
+  --serif-alt:'Cormorant Garamond',serif;
+  --sans:'Inter','Helvetica Neue',Arial,sans-serif;
+  --transition:cubic-bezier(.22,.61,.36,1);
+  --transition-slow:cubic-bezier(.65,0,.35,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--sans);
+  background:var(--white);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+
+/* ---------- Custom Cursor (desktop) ---------- */
+.cursor-dot{
+  position:fixed;width:6px;height:6px;background:#fff;border-radius:50%;
+  pointer-events:none;z-index:99999;transform:translate(-50%,-50%);
+  mix-blend-mode:difference;transition:transform .15s ease, width .25s, height .25s;
+}
+.cursor-ring{
+  position:fixed;width:38px;height:38px;border:1px solid rgba(255,255,255,.6);border-radius:50%;
+  pointer-events:none;z-index:99998;transform:translate(-50%,-50%);
+  mix-blend-mode:difference;transition:transform .35s var(--transition), width .25s, height .25s, border-color .25s;
+}
+@media (hover:none){.cursor-dot,.cursor-ring{display:none;}}
+
+/* ---------- Loader ---------- */
+.loader{
+  position:fixed;inset:0;background:#000;z-index:100000;display:flex;align-items:center;justify-content:center;
+  transition:opacity .8s ease, visibility .8s;
+}
+.loader.hidden{opacity:0;visibility:hidden;}
+.loader-text{color:#fff;font-family:var(--serif);font-style:italic;font-size:14px;letter-spacing:.4em;text-transform:uppercase;opacity:.85;}
+.loader-bar{position:absolute;bottom:0;left:0;height:1px;background:#fff;width:0;animation:loadbar 1.4s ease forwards;}
+@keyframes loadbar{from{width:0}to{width:100%}}
+
+/* ---------- Navigation ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 48px;
+  transition:background .4s var(--transition), padding .4s var(--transition), border-color .4s;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  background:rgba(255,255,255,.78);
+  backdrop-filter:saturate(180%) blur(18px);
+  -webkit-backdrop-filter:saturate(180%) blur(18px);
+  padding:14px 48px;
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.nav.scrolled .nav-logo,.nav.scrolled .nav-link,.nav.scrolled .nav-toggle span{color:#000;}
+.nav.scrolled .nav-toggle span{background:#000;}
+.nav-logo{
+  display:inline-flex;align-items:center;line-height:1;
+  font-family:var(--serif);font-weight:500;font-size:20px;letter-spacing:.18em;
+  color:#fff;text-transform:uppercase;
+}
+.nav-logo img{
+  height:46px;width:auto;display:block;
+  transition:height .4s var(--transition), opacity .35s;
+}
+.nav-logo img.dark{display:none;}
+.nav.scrolled .nav-logo img.white{display:none;}
+.nav.scrolled .nav-logo img.dark{display:block;}
+.nav.scrolled .nav-logo img{height:38px;}
+.nav-logo small{display:block;font-family:var(--sans);font-size:8px;letter-spacing:.45em;font-weight:400;margin-top:4px;opacity:.85;}
+.nav-menu{display:flex;align-items:center;gap:34px;list-style:none;}
+.nav-link{
+  color:#fff;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:400;
+  position:relative;padding:6px 0;transition:opacity .3s;
+}
+.nav-link::after{
+  content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;
+  transform:scaleX(0);transform-origin:right;transition:transform .5s var(--transition);
+}
+.nav-link:hover::after{transform:scaleX(1);transform-origin:left;}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.nav-toggle span{width:26px;height:1px;background:#fff;transition:all .3s;}
+
+/* Mobile menu */
+.mobile-menu{
+  position:fixed;inset:0;background:#000;z-index:999;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transition:opacity .5s var(--transition), visibility .5s;
+}
+.mobile-menu.open{opacity:1;visibility:visible;}
+.mobile-menu a{
+  font-family:var(--serif);color:#fff;font-size:32px;margin:14px 0;font-style:italic;font-weight:400;
+  opacity:0;transform:translateY(20px);transition:all .5s var(--transition);
+}
+.mobile-menu.open a{opacity:1;transform:translateY(0);}
+.mobile-menu.open a:nth-child(1){transition-delay:.05s}
+.mobile-menu.open a:nth-child(2){transition-delay:.1s}
+.mobile-menu.open a:nth-child(3){transition-delay:.15s}
+.mobile-menu.open a:nth-child(4){transition-delay:.2s}
+.mobile-menu.open a:nth-child(5){transition-delay:.25s}
+.mobile-menu.open a:nth-child(6){transition-delay:.3s}
+.mobile-menu.open a:nth-child(7){transition-delay:.35s}
+.mobile-menu.open a:nth-child(8){transition-delay:.4s}
+
+@media(max-width:960px){
+  .nav{padding:18px 24px;}
+  .nav.scrolled{padding:12px 24px;}
+  .nav-menu{display:none;}
+  .nav-toggle{display:flex;}
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;min-height:100vh;width:100%;
+  display:flex;align-items:flex-end;
+  color:#fff;overflow:hidden;
+  background:#000;
+}
+.hero-media{
+  position:absolute;inset:0;z-index:0;
+  background:url('./salon.heic') center center / cover no-repeat;
+  /* Cross-browser fallback: tarayıcı .heic desteklemiyorsa .webp veya .jpg dene */
+  background-image:image-set(
+    url('./salon.webp') type('image/webp'),
+    url('./salon.jpg') type('image/jpeg'),
+    url('./salon.heic') type('image/heic')
+  );
+  background-position:center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  filter:grayscale(35%) contrast(1.05);
+  transform:scale(1.04);
+  animation:slowzoom 18s ease-in-out infinite alternate;
+}
+@keyframes slowzoom{from{transform:scale(1.04)}to{transform:scale(1.12)}}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.25) 35%,rgba(0,0,0,.85) 100%);
+}
+.hero-grain{
+  position:absolute;inset:0;z-index:2;opacity:.06;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+.hero-inner{
+  position:relative;z-index:3;width:100%;
+  padding:0 48px 120px;
+}
+.hero-eyebrow{
+  display:inline-block;font-size:11px;letter-spacing:.5em;text-transform:uppercase;
+  margin-bottom:36px;opacity:.85;font-weight:300;
+  border-left:1px solid rgba(255,255,255,.5);padding-left:14px;
+}
+.hero-title{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(46px,7.4vw,128px);
+  line-height:.95;letter-spacing:-.02em;
+  max-width:1300px;margin-bottom:28px;
+}
+.hero-title em{font-style:italic;font-weight:400;}
+.hero-subtitle{
+  max-width:560px;font-size:15px;line-height:1.7;font-weight:300;
+  color:rgba(255,255,255,.85);margin-bottom:48px;
+}
+.hero-actions{display:flex;gap:18px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:18px 34px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;
+  border:1px solid currentColor;background:transparent;color:#fff;
+  transition:all .5s var(--transition);position:relative;overflow:hidden;
+}
+.btn::before{
+  content:'';position:absolute;inset:0;background:#fff;
+  transform:translateY(101%);transition:transform .5s var(--transition);z-index:-1;
+}
+.btn:hover{color:#000;}
+.btn:hover::before{transform:translateY(0);}
+.btn.dark{color:#000;}
+.btn.dark::before{background:#000;}
+.btn.dark:hover{color:#fff;}
+.btn.solid{background:#000;color:#fff;border-color:#000;}
+.btn.solid::before{background:#fff;}
+.btn.solid:hover{color:#000;}
+.btn-arrow{display:inline-block;transition:transform .4s;}
+.btn:hover .btn-arrow{transform:translateX(4px);}
+
+.hero-scroll{
+  position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+  z-index:3;color:#fff;font-size:10px;letter-spacing:.4em;text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:14px;opacity:.8;
+}
+.hero-scroll-line{width:1px;height:40px;background:#fff;position:relative;overflow:hidden;}
+.hero-scroll-line::after{
+  content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);
+  animation:scrollLine 2.2s ease infinite;
+}
+@keyframes scrollLine{0%{top:-100%}100%{top:100%}}
+
+.hero-meta{
+  position:absolute;top:50%;right:48px;transform:translateY(-50%) rotate(90deg);
+  transform-origin:right center;z-index:3;
+  font-size:10px;letter-spacing:.45em;text-transform:uppercase;color:rgba(255,255,255,.65);
+}
+
+@media(max-width:768px){
+  .hero-inner{padding:0 24px 110px;}
+  .hero-eyebrow{margin-bottom:24px;}
+  .hero-meta{display:none;}
+}
+
+/* ---------- Marquee ---------- */
+.marquee{
+  background:#000;color:#fff;padding:22px 0;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);
+  overflow:hidden;white-space:nowrap;
+}
+.marquee-track{display:inline-block;animation:marquee 38s linear infinite;}
+.marquee span{
+  font-family:var(--serif);font-size:34px;font-style:italic;font-weight:400;margin:0 30px;
+  display:inline-block;
+}
+.marquee i.dot{display:inline-block;width:6px;height:6px;background:#fff;border-radius:50%;vertical-align:middle;margin:0 4px;}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- Sections base ---------- */
+section{position:relative;}
+.container{max-width:1440px;margin:0 auto;padding:0 48px;}
+.section-pad{padding:140px 0;}
+.section-pad-sm{padding:90px 0;}
+
+.eyebrow{
+  font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:#000;font-weight:500;
+  display:inline-flex;align-items:center;gap:14px;margin-bottom:28px;
+}
+.eyebrow::before{content:'';width:36px;height:1px;background:#000;}
+.eyebrow.light{color:#fff;}
+.eyebrow.light::before{background:#fff;}
+
+.section-title{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(36px,5.4vw,86px);line-height:1;letter-spacing:-.02em;
+  margin-bottom:30px;
+}
+.section-title em{font-style:italic;font-weight:400;}
+
+@media(max-width:768px){
+  .section-pad{padding:90px 0;}
+  .container{padding:0 24px;}
+}
+
+/* ---------- ABOUT ---------- */
+.about{background:#fff;}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;
+}
+.about-img{
+  position:relative;aspect-ratio:3/4;overflow:hidden;background:#f0f0f0;
+}
+.about-img img,.about-img video{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(20%);transition:transform 1.6s var(--transition-slow);}
+.about-img:hover img,.about-img:hover video{transform:scale(1.05);}
+.about-img-tag{
+  position:absolute;top:24px;left:24px;background:#fff;color:#000;
+  padding:10px 16px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+}
+.about-text-block{max-width:540px;}
+.about-text-block p{
+  font-size:16px;line-height:1.85;color:#3a3a3a;margin-bottom:22px;font-weight:300;
+}
+.about-text-block .lead{
+  font-family:var(--serif);font-size:22px;font-style:italic;color:#000;line-height:1.5;
+  margin-bottom:30px;font-weight:400;
+}
+.about-stats{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:36px 50px;
+  margin-top:60px;padding-top:50px;border-top:1px solid #e5e5e5;
+}
+.stat-num{font-family:var(--serif);font-size:54px;line-height:1;font-weight:500;}
+.stat-num em{font-style:italic;font-size:34px;vertical-align:super;margin-left:2px;}
+.stat-label{
+  font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#666;font-weight:400;
+  margin-top:10px;
+}
+.about-signature{
+  margin-top:46px;font-family:var(--serif);font-style:italic;font-size:32px;
+  display:inline-block;color:#000;font-weight:400;
+}
+@media(max-width:960px){
+  .about-grid{grid-template-columns:1fr;gap:50px;}
+}
+
+/* ---------- SERVICES ---------- */
+.services{background:#0a0a0a;color:#fff;}
+.services-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;
+  margin-bottom:80px;
+}
+.services-head p{max-width:380px;color:#aaa;font-size:14px;line-height:1.7;font-weight:300;}
+.services-head-logo{
+  width:auto;height:130px;max-width:340px;object-fit:contain;
+  opacity:.95;align-self:center;
+}
+@media(max-width:960px){.services-head-logo{height:100px;}}
+@media(max-width:600px){.services-head-logo{height:80px;margin-top:6px;}}
+.services-tabs{
+  display:flex;gap:36px;margin-bottom:60px;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:18px;
+  flex-wrap:wrap;
+}
+.services-tab{
+  font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.45);
+  padding:0 0 8px;position:relative;font-weight:500;transition:color .35s;
+}
+.services-tab.active,.services-tab:hover{color:#fff;}
+.services-tab.active::after{
+  content:'';position:absolute;left:0;right:0;bottom:-19px;height:1px;background:#fff;
+}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:6px;
+}
+.service-card{
+  position:relative;aspect-ratio:4/5;overflow:hidden;background:#111;cursor:pointer;
+}
+.service-card img{
+  width:100%;height:100%;object-fit:cover;
+  filter:grayscale(40%);
+  transition:transform 1.4s var(--transition-slow), filter .8s;
+}
+.service-card:hover img{transform:scale(1.06);filter:grayscale(0%);}
+.service-card-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.15) 50%,rgba(0,0,0,.85) 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:36px;color:#fff;
+}
+.service-card-num{
+  font-family:var(--serif);font-style:italic;font-size:14px;opacity:.6;margin-bottom:14px;
+}
+.service-card h3{
+  font-family:var(--serif);font-size:30px;font-weight:500;line-height:1.1;margin-bottom:10px;
+}
+.service-card p{
+  font-size:13px;color:rgba(255,255,255,.75);line-height:1.6;font-weight:300;
+  max-height:0;opacity:0;overflow:hidden;
+  transition:max-height .55s var(--transition), opacity .35s, margin .55s var(--transition);
+}
+.service-card:hover p{max-height:120px;opacity:1;margin-top:6px;}
+.service-card .cta-mini{
+  margin-top:20px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:8px;opacity:.85;
+}
+@media(max-width:960px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.services-grid{grid-template-columns:1fr;}}
+
+/* ---------- PRICE LIST ---------- */
+.prices{background:#fff;}
+.prices-inner{max-width:1100px;margin:0 auto;text-align:center;}
+.prices .section-title{margin-bottom:18px;}
+.prices-sub{
+  font-family:var(--serif);font-style:italic;font-size:18px;color:#666;margin-bottom:80px;
+  font-weight:400;
+}
+.prices-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;text-align:left;
+}
+.price-col h3{
+  font-family:var(--serif);font-size:22px;letter-spacing:.4em;text-transform:uppercase;
+  font-weight:500;margin-bottom:36px;padding-bottom:18px;border-bottom:1px solid #000;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.price-col h3 span{font-size:11px;letter-spacing:.25em;color:#999;font-family:var(--sans);font-weight:400;}
+.price-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:14px 0;border-bottom:1px dotted #d8d8d8;gap:18px;
+  transition:padding-left .35s var(--transition);
+}
+.price-row:hover{padding-left:6px;}
+.price-name{font-size:15px;color:#1a1a1a;font-weight:400;}
+.price-dots{flex:1;border-bottom:1px dotted #ccc;margin:0 12px 5px;min-width:10px;}
+.price-val{
+  font-family:var(--serif);font-size:18px;font-weight:500;color:#000;white-space:nowrap;
+}
+.prices-note{
+  margin-top:80px;text-align:center;
+  font-family:var(--serif);font-style:italic;font-size:16px;color:#666;
+}
+.comb-icon{margin:50px auto 0;display:block;width:64px;opacity:.85;}
+@media(max-width:768px){.prices-grid{grid-template-columns:1fr;gap:50px;}}
+
+/* ---------- GALLERY ---------- */
+.gallery{background:#fff;}
+.gallery-head{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;
+  margin-bottom:60px;
+}
+.gallery-filters{display:flex;gap:14px;flex-wrap:wrap;}
+.gallery-filter{
+  padding:10px 22px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  border:1px solid #d0d0d0;color:#555;font-weight:500;border-radius:999px;
+  transition:all .35s var(--transition);
+}
+.gallery-filter.active,.gallery-filter:hover{background:#000;color:#fff;border-color:#000;}
+.gallery-masonry{
+  columns:3;column-gap:16px;
+}
+.gallery-item{
+  break-inside:avoid;margin-bottom:16px;position:relative;overflow:hidden;cursor:pointer;
+  background:#eee;
+}
+.gallery-item img{
+  width:100%;height:auto;display:block;transition:transform 1.4s var(--transition-slow);
+  filter:grayscale(20%);
+}
+.gallery-item:hover img{transform:scale(1.07);filter:grayscale(0);}
+.gallery-item-overlay{
+  position:absolute;inset:0;background:rgba(0,0,0,.45);color:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .4s var(--transition);
+  padding:20px;text-align:center;
+}
+.gallery-item:hover .gallery-item-overlay{opacity:1;}
+.gallery-item-overlay span{font-size:11px;letter-spacing:.4em;text-transform:uppercase;margin-top:10px;opacity:.85;}
+.gallery-item-overlay h4{font-family:var(--serif);font-size:24px;font-weight:500;}
+@media(max-width:960px){.gallery-masonry{columns:2;}}
+@media(max-width:600px){.gallery-masonry{columns:1;}}
+
+/* ---------- INSTAGRAM ---------- */
+.instagram{background:#f7f7f7;}
+.instagram-head{text-align:center;margin-bottom:70px;}
+.instagram-head .eyebrow{justify-content:center;}
+.instagram-head .eyebrow::before{display:none;}
+.instagram-head p{
+  max-width:560px;margin:18px auto 0;font-size:15px;color:#555;font-weight:300;line-height:1.7;
+}
+.ig-handle{
+  margin-top:24px;font-family:var(--serif);font-style:italic;font-size:22px;color:#000;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.ig-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:6px;
+}
+.ig-item{
+  position:relative;aspect-ratio:1/1;overflow:hidden;cursor:pointer;background:#e5e5e5;
+}
+.ig-item img,.ig-item video{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s var(--transition-slow);filter:grayscale(15%);}
+.ig-item:hover img,.ig-item:hover video{transform:scale(1.08);filter:grayscale(0);}
+.ig-item video{position:absolute;inset:0;background:#111;}
+.ig-overlay{
+  position:absolute;inset:0;background:rgba(0,0,0,.55);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .4s var(--transition);
+}
+.ig-item:hover .ig-overlay{opacity:1;}
+.ig-overlay svg{width:34px;height:34px;color:#fff;}
+.ig-play{
+  position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;
+  background:rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(255,255,255,.25);pointer-events:none;z-index:2;
+}
+.ig-play svg{width:14px;height:14px;color:#fff;margin-left:2px;}
+.ig-item{cursor:pointer;}
+.ig-cta{text-align:center;margin-top:60px;}
+@media(max-width:768px){.ig-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:420px){.ig-grid{grid-template-columns:1fr;}}
+
+/* Instagram Modal */
+.ig-modal{
+  position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transition:opacity .35s var(--transition), visibility .35s;
+  padding:24px;
+}
+.ig-modal.open{opacity:1;visibility:visible;}
+.ig-modal-backdrop{
+  position:absolute;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.ig-modal-card{
+  position:relative;background:#fff;color:#000;max-width:460px;width:100%;
+  padding:54px 44px 44px;text-align:center;border:1px solid rgba(0,0,0,.08);
+  transform:translateY(20px) scale(.98);transition:transform .45s var(--transition);
+}
+.ig-modal.open .ig-modal-card{transform:translateY(0) scale(1);}
+.ig-modal-close{
+  position:absolute;top:18px;right:18px;width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;color:#000;
+  font-size:14px;transition:background .25s;
+}
+.ig-modal-close:hover{background:#f2f2f2;}
+.ig-modal-icon{
+  width:54px;height:54px;border:1px solid #000;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 24px;
+}
+.ig-modal-icon svg{width:24px;height:24px;}
+.ig-modal-eyebrow{
+  font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:#888;margin-bottom:14px;font-weight:500;
+}
+.ig-modal-title{
+  font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.3;margin-bottom:10px;letter-spacing:-.01em;
+}
+.ig-modal-title em{font-style:italic;}
+.ig-modal-text{font-size:14px;color:#555;line-height:1.65;margin-bottom:32px;font-weight:300;}
+.ig-modal-actions{display:flex;flex-direction:column;gap:12px;}
+.ig-modal-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  padding:16px 24px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;
+  border:1px solid #000;background:#000;color:#fff;transition:all .35s var(--transition);
+  cursor:pointer;font-family:inherit;
+}
+.ig-modal-btn:hover{background:#fff;color:#000;}
+.ig-modal-btn.ghost{background:transparent;color:#000;}
+.ig-modal-btn.ghost:hover{background:#000;color:#fff;}
+@media(max-width:480px){
+  .ig-modal-card{padding:44px 26px 32px;}
+  .ig-modal-title{font-size:20px;}
+}
+
+/* ---------- REVIEWS ---------- */
+.reviews{background:#fff;text-align:center;}
+.reviews-rating{
+  display:inline-flex;align-items:center;gap:18px;margin-bottom:24px;
+  font-family:var(--serif);font-size:18px;
+}
+.reviews-rating .num{font-size:54px;font-weight:500;line-height:1;}
+.reviews-stars{color:#000;letter-spacing:4px;font-size:22px;}
+.reviews-count{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#666;font-family:var(--sans);}
+.reviews-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:80px;text-align:left;
+}
+.review-card{
+  background:#fafafa;padding:42px 36px;
+  border:1px solid #ececec;
+  position:relative;transition:transform .4s var(--transition),box-shadow .4s;
+}
+.review-card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(0,0,0,.15);}
+.review-quote{
+  font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.7;color:#1a1a1a;
+  margin-bottom:30px;font-weight:400;
+}
+.review-author{
+  display:flex;align-items:center;gap:14px;
+}
+.review-avatar{
+  width:46px;height:46px;border-radius:50%;background:#000;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:16px;
+}
+.review-name{font-size:14px;font-weight:500;}
+.review-date{font-size:11px;color:#999;letter-spacing:.15em;text-transform:uppercase;margin-top:2px;}
+.review-quote-mark{
+  position:absolute;top:18px;right:24px;font-family:var(--serif);font-size:80px;color:#000;opacity:.07;line-height:1;
+}
+@media(max-width:960px){.reviews-grid{grid-template-columns:1fr;}}
+
+/* ---------- CTA ---------- */
+.cta{
+  background:#000;color:#fff;text-align:center;padding:160px 0;position:relative;overflow:hidden;
+}
+.cta::before{
+  content:'';position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=2000&q=80') center/cover;
+  opacity:.18;filter:grayscale(100%);
+}
+.cta-inner{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 24px;}
+.cta-eyebrow{
+  font-size:11px;letter-spacing:.5em;text-transform:uppercase;opacity:.7;margin-bottom:30px;
+}
+.cta h2{
+  font-family:var(--serif);font-size:clamp(40px,6vw,90px);line-height:1.05;font-weight:400;
+  margin-bottom:30px;letter-spacing:-.01em;
+}
+.cta h2 em{font-style:italic;}
+.cta p{
+  max-width:540px;margin:0 auto 50px;font-size:16px;color:rgba(255,255,255,.8);font-weight:300;line-height:1.7;
+}
+.cta-actions{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;}
+
+/* ---------- CONTACT ---------- */
+.contact{background:#fff;}
+.contact-grid{
+  display:grid;grid-template-columns:1.1fr 1fr;gap:80px;
+}
+.contact-map{
+  width:100%;height:100%;min-height:560px;background:#eee;border:0;
+}
+.contact-info h3{font-family:var(--serif);font-size:18px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:12px;font-weight:500;}
+.contact-block{padding:26px 0;border-bottom:1px solid #ececec;}
+.contact-block:first-child{padding-top:0;}
+.contact-block p,.contact-block a{font-size:15px;color:#333;line-height:1.7;font-weight:300;}
+.contact-block a:hover{text-decoration:underline;text-underline-offset:4px;}
+.hours-list{display:grid;gap:8px;}
+.hours-row{display:flex;justify-content:space-between;font-size:14px;}
+.hours-row span:first-child{color:#666;font-weight:300;}
+.hours-row span:last-child{font-weight:500;}
+.hours-row.closed span:last-child{color:#c00;font-weight:500;}
+
+.contact-actions{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;}
+.contact-actions .btn{color:#fff;}
+.contact-form{margin-top:50px;display:grid;gap:18px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.form-input,.form-select,.form-textarea{
+  width:100%;padding:18px 4px;background:transparent;border:none;border-bottom:1px solid #ddd;
+  font-family:var(--sans);font-size:14px;color:#000;
+  transition:border-color .35s;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:#000;}
+.form-input::placeholder,.form-textarea::placeholder{color:#aaa;font-weight:300;}
+.form-textarea{resize:none;min-height:90px;}
+.form-submit{
+  margin-top:14px;justify-self:start;
+}
+@media(max-width:960px){
+  .contact-grid{grid-template-columns:1fr;gap:40px;}
+  .contact-map{min-height:360px;}
+  .form-row{grid-template-columns:1fr;}
+}
+
+/* ---------- FOOTER ---------- */
+footer{background:#000;color:#fff;padding:90px 0 40px;}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:60px;margin-bottom:80px;
+}
+.footer-logo{
+  font-family:var(--serif);font-size:30px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;line-height:1.1;
+}
+.footer-tag{
+  margin-top:22px;font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(255,255,255,.7);max-width:320px;line-height:1.5;
+}
+.footer-col h4{font-size:11px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:24px;font-weight:500;color:#fff;}
+.footer-col ul{list-style:none;display:grid;gap:12px;}
+.footer-col a{font-size:14px;color:rgba(255,255,255,.65);font-weight:300;transition:color .25s;}
+.footer-col a:hover{color:#fff;}
+.footer-bottom{
+  padding-top:30px;border-top:1px solid rgba(255,255,255,.1);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;
+  font-size:12px;color:rgba(255,255,255,.5);letter-spacing:.05em;
+}
+.footer-bottom .socials{display:flex;gap:18px;}
+.footer-bottom .socials a{color:rgba(255,255,255,.6);transition:color .25s;}
+.footer-bottom .socials a:hover{color:#fff;}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:40px;}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+
+/* ---------- Reveal animations ---------- */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 1s var(--transition), transform 1s var(--transition);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+.reveal-delay-4{transition-delay:.4s;}
+.image-reveal{position:relative;overflow:hidden;}
+.image-reveal::after{
+  content:'';position:absolute;inset:0;background:#fff;transform-origin:right;
+  transition:transform 1.2s var(--transition-slow);
+}
+.image-reveal.in::after{transform:scaleX(0);}
+
+/* ---------- Selection ---------- */
+::selection{background:#000;color:#fff;}
+</style>
+</head>
+<body>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <div class="loader-text">Seymen Gezici</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- Custom cursor -->
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <a href="#hero" class="nav-logo" aria-label="Seymen Gezici Hair Studio">
+    <img src="./logo-white.png" alt="Seymen Gezici Hair Studio" class="white">
+    <img src="./logo-dark.png" alt="Seymen Gezici Hair Studio" class="dark">
+  </a>
+  <ul class="nav-menu">
+    <li><a href="#hero" class="nav-link">Ana Sayfa</a></li>
+    <li><a href="#about" class="nav-link">Hakkımızda</a></li>
+    <li><a href="#services" class="nav-link">Hizmetler</a></li>
+    <li><a href="#prices" class="nav-link">Fiyat Listesi</a></li>
+    <li><a href="#instagram" class="nav-link">Instagram</a></li>
+    <li><a href="#reviews" class="nav-link">Yorumlar</a></li>
+    <li><a href="#contact" class="nav-link">İletişim</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hero">Ana Sayfa</a>
+  <a href="#about">Hakkımızda</a>
+  <a href="#services">Hizmetler</a>
+  <a href="#prices">Fiyat Listesi</a>
+  <a href="#instagram">Instagram</a>
+  <a href="#reviews">Yorumlar</a>
+  <a href="#contact">İletişim</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-media"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-meta">EST · 2010 · MERSİN</div>
+  <div class="hero-inner">
+    <span class="hero-eyebrow reveal">Mersin'in Premium Kadın Kuaförü</span>
+    <h1 class="hero-title reveal reveal-delay-1">
+      Saçınıza Hak <em>Ettiği</em><br/>Zarafeti Kazandırın.
+    </h1>
+    <p class="hero-subtitle reveal reveal-delay-2">
+      Profesyonel saç tasarımı, renk uygulamaları ve kişiye özel bakım hizmetleriyle
+      doğal güzelliğinizi ortaya çıkarıyoruz.
+    </p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="#contact" class="btn">Randevu Al <span class="btn-arrow">→</span></a>
+      <a href="#prices" class="btn">Fiyat Listesini İncele</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span><em>Ombre</em><i class="dot"></i> Balyaj <i class="dot"></i> <em>Röfle</em> <i class="dot"></i> Keratin <i class="dot"></i> <em>Gelin Saç</em> <i class="dot"></i> Profesyonel Makyaj <i class="dot"></i> <em>Saç Kesimi</em> <i class="dot"></i> Bakım <i class="dot"></i> </span>
+    <span><em>Ombre</em><i class="dot"></i> Balyaj <i class="dot"></i> <em>Röfle</em> <i class="dot"></i> Keratin <i class="dot"></i> <em>Gelin Saç</em> <i class="dot"></i> Profesyonel Makyaj <i class="dot"></i> <em>Saç Kesimi</em> <i class="dot"></i> Bakım <i class="dot"></i> </span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about section-pad" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img image-reveal reveal">
+        <span class="about-img-tag">Founder</span>
+        <video
+          src="./seymengezici.mp4"
+          autoplay muted loop playsinline preload="auto"
+          poster="./seymen.jpg"></video>
+      </div>
+      <div class="about-text-block reveal reveal-delay-1">
+        <span class="eyebrow">Hakkımızda</span>
+        <h2 class="section-title">Seymen Gezici <em>ile</em><br/>Tanışın.</h2>
+        <p class="lead">
+          "Güzellik teknik bilgi kadar bakış açısıyla da ortaya çıkar."
+        </p>
+        <p>
+          Yılların deneyimi, güçlü teknik bilgisi ve estetik bakış açısıyla
+          Seymen Gezici Hair Studio, Mersin'de kadınlara premium saç ve güzellik
+          hizmetleri sunmaktadır. Her işlem, saç sağlığını koruyarak doğal ve
+          etkileyici sonuçlar elde etmek için özenle planlanır.
+        </p>
+        <div class="about-stats">
+          <div>
+            <div class="stat-num">15<em>+</em></div>
+            <div class="stat-label">Yılların Deneyimi</div>
+          </div>
+          <div>
+            <div class="stat-num">100<em>%</em></div>
+            <div class="stat-label">Premium Hizmet Anlayışı</div>
+          </div>
+          <div>
+            <div class="stat-num">1:1</div>
+            <div class="stat-label">Kişiye Özel Uygulamalar</div>
+          </div>
+          <div>
+            <div class="stat-num">4.7<em>★</em></div>
+            <div class="stat-label">Müşteri Memnuniyeti</div>
+          </div>
+        </div>
+        <div class="about-signature">— Seymen Gezici</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services section-pad" id="services">
+  <div class="container">
+    <div class="services-head">
+      <div class="reveal">
+        <span class="eyebrow light">Hizmetlerimiz</span>
+        <h2 class="section-title">Saçınızın <em>imzası</em><br/>burada şekillenir.</h2>
+      </div>
+      <img src="./logo-white.png" alt="Seymen Gezici Hair Studio" class="services-head-logo reveal reveal-delay-1" />
+    </div>
+
+    <div class="services-tabs reveal">
+      <button class="services-tab active" data-tab="hair">Saç Hizmetleri</button>
+      <button class="services-tab" data-tab="beauty">Güzellik</button>
+      <button class="services-tab" data-tab="bridal">Gelin & Nişan</button>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+      <!-- Hair -->
+      <div class="service-card reveal" data-cat="hair">
+        <img src="./services/kesim.jpg" alt="Kesim & Fön">
+        <div class="service-card-overlay">
+          <div class="service-card-num">01 — Saç</div>
+          <h3>Kesim & Fön</h3>
+          <p>Yüz hatlarınıza özel tasarlanan kesim ve uzun ömürlü, hacimli fön uygulaması.</p>
+          <span class="cta-mini">Detay <span>→</span></span>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-1" data-cat="hair">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85" alt="Ombre">
+        <div class="service-card-overlay">
+          <div class="service-card-num">02 — Renk</div>
+          <h3>Ombre & Balyaj</h3>
+          <p>Doğal geçişler, sıcak ve soğuk tonlarla saçınıza derinlik katan renk teknikleri.</p>
+          <span class="cta-mini">Detay <span>→</span></span>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-2" data-cat="hair">
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=85" alt="Röfle">
+        <div class="service-card-overlay">
+          <div class="service-card-num">03 — Renk</div>
+          <h3>Röfle & Dip Boya</h3>
+          <p>Saçınıza ışık veren teknik uygulamalar ve dipten köke mükemmel renk geçişi.</p>
+          <span class="cta-mini">Detay <span>→</span></span>
+        </div>
+      </div>
+      <div class="service-card reveal" data-cat="hair">
+        <img src="./services/keratin.jpg" alt="Keratin Bakımı">
+        <div class="service-card-overlay">
+          <div class="service-card-num">04 — Bakım</div>
+          <h3>Keratin Bakımı</h3>
+          <p>Yıpranmış saçlar için onarıcı keratin terapisi; ipeksi parlaklık ve doğal yumuşaklık.</p>
+          <span class="cta-mini">Detay <span>→</span></span>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-1" data-cat="hair">
+        <img src="./services/boya.jpg" alt="Komple Boya">
+        <div class="service-card-overlay">
+          <div class="service-card-num">05 — Renk</div>
+          <h3>Komple Boya</h3>
+          <p>Premium markalarla saç sağlığını koruyarak kalıcı renk dönüşümleri.</p>
+          <span class="cta-mini">Detay <span>→</span></span>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-2" data-cat="bridal">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85" alt="Gelin">
+        <div class="service-card-overlay">
+          <div class="service-card-num">06 — Özel Gün</div>
+          <h3>Gelin Saç & Makyaj</h3>
+          <p>Hayalinizdeki günde sizi en zarif haliyle gösterecek bütünleşik bir hazırlık deneyimi.</p>
+          <span class="cta-mini">Detay <span>→</span></span>
+        </div>
+      </div>
+      <div class="service-card reveal" data-cat="bridal">
+        <img src="./services/nisan.jpg" alt="Nişan Hazırlığı">
+        <div class="service-card-overlay">
+          <div class="service-card-num">07 — Özel Gün</div>
+          <h3>Nişan Hazırlığı</h3>
+          <p>Stilinizi yansıtan saç tasarımı ve makyajla unutulmaz bir nişan akşamı.</p>
+          <span class="cta-mini">Detay <span>→</span></span>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-1" data-cat="beauty">
+        <img src="./services/makyaj.jpg" alt="Profesyonel Makyaj">
+        <div class="service-card-overlay">
+          <div class="service-card-num">08 — Güzellik</div>
+          <h3>Profesyonel Makyaj</h3>
+          <p>Davet, çekim ve özel günler için iz bırakan, kalıcılığı yüksek profesyonel makyaj.</p>
+          <span class="cta-mini">Detay <span>→</span></span>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-2" data-cat="beauty">
+        <img src="./services/kas.jpg" alt="Kaş & Yüz Bakımı">
+        <div class="service-card-overlay">
+          <div class="service-card-num">09 — Güzellik</div>
+          <h3>Kaş & Yüz Bakımı</h3>
+          <p>Kaş tasarımı, dudak üstü ve yüz alımı uygulamalarıyla pürüzsüz bir görünüm.</p>
+          <span class="cta-mini">Detay <span>→</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section class="prices section-pad" id="prices">
+  <div class="container prices-inner">
+    <span class="eyebrow reveal" style="justify-content:center;">Premium Atölye</span>
+    <h2 class="section-title reveal reveal-delay-1">Fiyat <em>Listesi</em></h2>
+    <p class="prices-sub reveal reveal-delay-2">"Detayda gizli olan zarafetin karşılığıdır."</p>
+
+    <div class="prices-grid">
+      <div class="price-col reveal">
+        <h3>Saç <span>Hair</span></h3>
+        <div class="price-row"><span class="price-name">Fön</span><span class="price-dots"></span><span class="price-val">500 ₺</span></div>
+        <div class="price-row"><span class="price-name">Kırık Fön</span><span class="price-dots"></span><span class="price-val">700 ₺</span></div>
+        <div class="price-row"><span class="price-name">Yıkama</span><span class="price-dots"></span><span class="price-val">100 ₺</span></div>
+        <div class="price-row"><span class="price-name">Maşa</span><span class="price-dots"></span><span class="price-val">1.000 ₺</span></div>
+        <div class="price-row"><span class="price-name">Topuz</span><span class="price-dots"></span><span class="price-val">2.500 ₺</span></div>
+        <div class="price-row"><span class="price-name">Kesim</span><span class="price-dots"></span><span class="price-val">2.000 ₺</span></div>
+        <div class="price-row"><span class="price-name">Dip Boya</span><span class="price-dots"></span><span class="price-val">2.000 ₺</span></div>
+        <div class="price-row"><span class="price-name">Komple Boya</span><span class="price-dots"></span><span class="price-val">3.000 ₺</span></div>
+        <div class="price-row"><span class="price-name">Ombre / Renk / Röfle / Balyaj</span><span class="price-dots"></span><span class="price-val">12.000 ₺+</span></div>
+        <div class="price-row"><span class="price-name">Açma / Boyama</span><span class="price-dots"></span><span class="price-val">4.500 ₺+</span></div>
+        <div class="price-row"><span class="price-name">Dip Açma Boyama</span><span class="price-dots"></span><span class="price-val">4.000 ₺+</span></div>
+        <div class="price-row"><span class="price-name">Keratin Saç Bakımı</span><span class="price-dots"></span><span class="price-val">700 ₺</span></div>
+        <div class="price-row"><span class="price-name">Örgü</span><span class="price-dots"></span><span class="price-val">1.500 ₺</span></div>
+        <div class="price-row"><span class="price-name">Cila</span><span class="price-dots"></span><span class="price-val">1.500 ₺</span></div>
+        <div class="price-row"><span class="price-name">Gelin Saç & Makyaj</span><span class="price-dots"></span><span class="price-val">25.000 ₺</span></div>
+        <div class="price-row"><span class="price-name">Nişan</span><span class="price-dots"></span><span class="price-val">20.000 ₺</span></div>
+      </div>
+
+      <div class="price-col reveal reveal-delay-1">
+        <h3>Güzellik <span>Beauty</span></h3>
+        <div class="price-row"><span class="price-name">Kaş & Dudak Üstü</span><span class="price-dots"></span><span class="price-val">500 ₺</span></div>
+        <div class="price-row"><span class="price-name">Yüz Alımı</span><span class="price-dots"></span><span class="price-val">750 ₺</span></div>
+        <div class="price-row"><span class="price-name">Makyaj</span><span class="price-dots"></span><span class="price-val">3.000 ₺</span></div>
+        <div class="price-row"><span class="price-name">Profesyonel Makyaj</span><span class="price-dots"></span><span class="price-val">6.000 ₺</span></div>
+
+        <svg class="comb-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="6" y="22" width="52" height="10" stroke="black" stroke-width="1.4"/>
+          <line x1="10" y1="32" x2="10" y2="52" stroke="black" stroke-width="1.2"/>
+          <line x1="16" y1="32" x2="16" y2="52" stroke="black" stroke-width="1.2"/>
+          <line x1="22" y1="32" x2="22" y2="52" stroke="black" stroke-width="1.2"/>
+          <line x1="28" y1="32" x2="28" y2="52" stroke="black" stroke-width="1.2"/>
+          <line x1="34" y1="32" x2="34" y2="52" stroke="black" stroke-width="1.2"/>
+          <line x1="40" y1="32" x2="40" y2="52" stroke="black" stroke-width="1.2"/>
+          <line x1="46" y1="32" x2="46" y2="52" stroke="black" stroke-width="1.2"/>
+          <line x1="52" y1="32" x2="52" y2="52" stroke="black" stroke-width="1.2"/>
+        </svg>
+      </div>
+    </div>
+
+    <p class="prices-note">Fiyatlar kısa saç baz alınarak belirlenmiştir.</p>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="instagram section-pad" id="instagram">
+  <div class="container">
+    <div class="instagram-head reveal">
+      <span class="eyebrow">Instagram</span>
+      <h2 class="section-title">Instagram'da <em>bizi</em><br/>keşfedin.</h2>
+      <p>Gerçek müşteri dönüşümleri ve salonumuzdan ilham veren çalışmalar.</p>
+      <a href="https://www.instagram.com/seymengezici_/" target="_blank" rel="noopener" class="ig-handle">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        @seymengezici_
+      </a>
+    </div>
+    <div class="ig-grid" id="igGrid">
+
+      <div class="ig-item reveal" data-url="https://www.instagram.com/p/DXojwrojAwh/" role="button" tabindex="0" aria-label="Instagram gönderisi">
+        <video class="ig-video" autoplay muted loop playsinline preload="auto" poster="./Videolar/ig-1-poster.jpg">
+          <source src="./Videolar/ig-1-web.mp4" type="video/mp4">
+        </video>
+        <div class="ig-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
+      </div>
+
+      <div class="ig-item reveal" data-url="https://www.instagram.com/reel/DNOKGT5Ipib/" role="button" tabindex="0" aria-label="Instagram reel">
+        <video class="ig-video" autoplay muted loop playsinline preload="auto" poster="./Videolar/ig-2-poster.jpg">
+          <source src="./Videolar/ig-2-web.mp4" type="video/mp4">
+        </video>
+        <div class="ig-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
+      </div>
+
+      <div class="ig-item reveal" data-url="https://www.instagram.com/p/DXHctJbDIk4/" role="button" tabindex="0" aria-label="Instagram gönderisi">
+        <video class="ig-video" autoplay muted loop playsinline preload="auto" poster="./Videolar/ig-3-poster.jpg">
+          <source src="./Videolar/ig-3-web.mp4" type="video/mp4">
+        </video>
+        <div class="ig-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
+      </div>
+
+      <div class="ig-item reveal" data-url="https://www.instagram.com/reel/DJ4PykRI847/" role="button" tabindex="0" aria-label="Instagram reel">
+        <video class="ig-video" autoplay muted loop playsinline preload="auto" poster="./Videolar/ig-4-poster.jpg">
+          <source src="./Videolar/ig-4-web.mp4" type="video/mp4">
+        </video>
+        <div class="ig-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
+      </div>
+
+      <div class="ig-item reveal" data-url="https://www.instagram.com/reel/DJee7Beo_mr/" role="button" tabindex="0" aria-label="Instagram reel">
+        <video class="ig-video" autoplay muted loop playsinline preload="auto" poster="./Videolar/ig-6-poster.jpg">
+          <source src="./Videolar/ig-6-web.mp4" type="video/mp4">
+        </video>
+        <div class="ig-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
+      </div>
+
+    </div>
+    <div class="ig-cta">
+      <a href="https://www.instagram.com/seymengezici_/" target="_blank" rel="noopener" class="btn dark ig-external">Tüm Gönderileri Gör <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews section-pad" id="reviews">
+  <div class="container">
+    <span class="eyebrow reveal" style="justify-content:center;">Müşteri Yorumları</span>
+    <h2 class="section-title reveal reveal-delay-1">Sözler <em>onların</em>.</h2>
+
+    <div class="reveal reveal-delay-2" style="margin-top:50px;">
+      <div class="reviews-rating">
+        <span class="num">4.7</span>
+        <div>
+          <div class="reviews-stars">★★★★★</div>
+          <div class="reviews-count">63+ Google Yorumu</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <span class="review-quote-mark">"</span>
+        <p class="review-quote">Yıllardır gittiğim en iyi kuaför. Saç bakımına olan özeni ve sonuçların doğallığı gerçekten etkileyici. Mersin'de bu kalitede bir hizmet bulmak çok zor.</p>
+        <div class="review-author">
+          <div class="review-avatar">A</div>
+          <div>
+            <div class="review-name">Ayşe K.</div>
+            <div class="review-date">Mart 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <span class="review-quote-mark">"</span>
+        <p class="review-quote">Düğünüm için Seymen Gezici'yi tercih ettim ve hayatımın en güzel görünümüne kavuştum. Kuaförlüğün ötesinde gerçek bir sanat icrası.</p>
+        <div class="review-author">
+          <div class="review-avatar">D</div>
+          <div>
+            <div class="review-name">Damla Y.</div>
+            <div class="review-date">Şubat 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <span class="review-quote-mark">"</span>
+        <p class="review-quote">Balyajım hâlâ ilk günkü gibi. Saçımın yapısını ve istediklerimi anlayan, gerçekten profesyonel bir ekip. Kesinlikle tavsiye ederim.</p>
+        <div class="review-author">
+          <div class="review-avatar">E</div>
+          <div>
+            <div class="review-name">Ece M.</div>
+            <div class="review-date">Ocak 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <div class="cta-eyebrow reveal">Randevu</div>
+    <h2 class="reveal reveal-delay-1">Yeni Görünümünüz <em>için</em><br/>hazır mısınız?</h2>
+    <p class="reveal reveal-delay-2">Size en uygun saç tasarımını birlikte planlayalım. Salonumuzda sizi bekleyen premium bir deneyim var.</p>
+    <div class="cta-actions reveal reveal-delay-3">
+      <a href="https://wa.me/905320120951" target="_blank" rel="noopener" class="btn solid">
+        WhatsApp ile Randevu Al <span class="btn-arrow">→</span>
+      </a>
+      <a href="tel:+905320120951" class="btn">Bizi Ara</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact section-pad" id="contact">
+  <div class="container">
+    <div style="margin-bottom:60px;" class="reveal">
+      <span class="eyebrow">İletişim</span>
+      <h2 class="section-title">Bize <em>ulaşın</em>.</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <iframe class="contact-map"
+          src="https://www.google.com/maps?q=G%C3%BCvenevler+Mahallesi+1909.+Sk.+No:32%2FA+Yeni%C5%9Fehir+Mersin&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+
+      <div class="contact-info reveal reveal-delay-1">
+        <div class="contact-block">
+          <h3>Adres</h3>
+          <p>DİLŞAT APT, Güvenevler Mahallesi,<br/>1909. Sk. No:32/A,<br/>33140 Yenişehir / Mersin</p>
+        </div>
+        <div class="contact-block">
+          <h3>Telefon</h3>
+          <a href="tel:+905320120951">0532 012 09 51</a>
+        </div>
+        <div class="contact-block">
+          <h3>Çalışma Saatleri</h3>
+          <div class="hours-list" style="margin-top:10px;">
+            <div class="hours-row"><span>Pazartesi</span><span>09:00 – 19:30</span></div>
+            <div class="hours-row"><span>Salı</span><span>09:00 – 19:30</span></div>
+            <div class="hours-row"><span>Çarşamba</span><span>09:00 – 19:30</span></div>
+            <div class="hours-row"><span>Perşembe</span><span>09:00 – 19:30</span></div>
+            <div class="hours-row"><span>Cuma</span><span>09:00 – 19:30</span></div>
+            <div class="hours-row"><span>Cumartesi</span><span>09:00 – 19:30</span></div>
+            <div class="hours-row closed"><span>Pazar</span><span>Kapalı</span></div>
+          </div>
+        </div>
+
+        <div class="contact-actions">
+          <a href="https://wa.me/905320120951" target="_blank" rel="noopener" class="btn dark">
+            WhatsApp ile Randevu <span class="btn-arrow">→</span>
+          </a>
+          <a href="tel:+905320120951" class="btn dark" style="background:transparent;color:#000;">Bizi Ara</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram Confirmation Modal -->
+<div class="ig-modal" id="igModal" role="dialog" aria-modal="true" aria-labelledby="igModalTitle">
+  <div class="ig-modal-backdrop" data-close></div>
+  <div class="ig-modal-card">
+    <button class="ig-modal-close" data-close aria-label="Kapat">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="ig-modal-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+    </div>
+    <div class="ig-modal-eyebrow">Instagram</div>
+    <h3 class="ig-modal-title" id="igModalTitle">Bu gönderiyi <em>Instagram'da</em> açmak ister misiniz?</h3>
+    <p class="ig-modal-text">Yeni bir sekmede @seymengezici_ profiline yönlendirileceksiniz.</p>
+    <div class="ig-modal-actions">
+      <button type="button" class="ig-modal-btn" id="igModalConfirm">Evet, Instagram'da Aç <span class="btn-arrow">→</span></button>
+      <button type="button" class="ig-modal-btn ghost" data-close>Hayır, Sayfada Kal</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="./logo-white.png" alt="Seymen Gezici Hair Studio" style="height:72px;width:auto;display:block;margin-bottom:8px;"/>
+        <p class="footer-tag">Güzellik detaylarda gizlidir.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Menü</h4>
+        <ul>
+          <li><a href="#about">Hakkımızda</a></li>
+          <li><a href="#services">Hizmetler</a></li>
+          <li><a href="#prices">Fiyat Listesi</a></li>
+          <li><a href="#instagram">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Bağlantılar</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/seymengezici_/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://maps.google.com/?q=Güvenevler+Mahallesi+1909.+Sk.+No:32/A+Yenişehir+Mersin" target="_blank" rel="noopener">Google Maps</a></li>
+          <li><a href="#reviews">Yorumlar</a></li>
+          <li><a href="#contact">İletişim</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="tel:+905320120951">0532 012 09 51</a></li>
+          <li><a href="https://wa.me/905320120951">WhatsApp</a></li>
+          <li><a href="#contact">Yenişehir / Mersin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Seymen Gezici Hair Studio. Tüm hakları saklıdır.</div>
+      <div class="socials">
+        <a href="https://www.instagram.com/seymengezici_/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="https://wa.me/905320120951" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 1 1-3.6-7.2L21 4l-1.2 3.6A9 9 0 0 1 21 12Z"/><path d="M8 11.5c.5 2 2.5 4 4.5 4.5l1.4-1.4 2.4 1c.4.2.6.6.5 1A3 3 0 0 1 14 19a8 8 0 0 1-8-8 3 3 0 0 1 2.4-2.8c.4-.1.8.1 1 .5l1 2.4L9 12.5Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Loader
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('loader').classList.add('hidden'),900);
+});
+
+// Custom cursor
+const dot=document.getElementById('cursorDot');
+const ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+window.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  dot.style.left=mx+'px';dot.style.top=my+'px';
+});
+function loop(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);}
+loop();
+document.querySelectorAll('a,button,.gallery-item,.service-card,.ig-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ring.style.width='60px';ring.style.height='60px';ring.style.borderColor='rgba(255,255,255,.9)';});
+  el.addEventListener('mouseleave',()=>{ring.style.width='38px';ring.style.height='38px';ring.style.borderColor='rgba(255,255,255,.6)';});
+});
+
+// Scroll nav
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>80) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+// Mobile toggle
+const navToggle=document.getElementById('navToggle');
+const mobileMenu=document.getElementById('mobileMenu');
+navToggle.addEventListener('click',()=>{
+  mobileMenu.classList.toggle('open');
+  navToggle.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileMenu.classList.remove('open')));
+
+// Reveal on scroll
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal,.image-reveal').forEach(el=>io.observe(el));
+
+// Services tabs (filter cards)
+const tabs=document.querySelectorAll('.services-tab');
+const cards=document.querySelectorAll('.service-card');
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  tabs.forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');
+  const cat=t.dataset.tab;
+  cards.forEach(c=>{
+    if(cat==='all'||c.dataset.cat===cat) c.style.display='';
+    else c.style.display='none';
+  });
+}));
+
+// Instagram modal
+const igModal=document.getElementById('igModal');
+const igConfirm=document.getElementById('igModalConfirm');
+let pendingIgUrl=null;
+
+function openIgModal(url){
+  pendingIgUrl=url;
+  igModal.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeIgModal(){
+  igModal.classList.remove('open');
+  document.body.style.overflow='';
+  pendingIgUrl=null;
+}
+
+document.querySelectorAll('.ig-item').forEach(el=>{
+  const trigger=()=>{
+    const url=el.dataset.url;
+    if(url) openIgModal(url);
+  };
+  el.addEventListener('click',trigger);
+  el.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();trigger();}
+  });
+});
+
+// IG videos play like GIFs — autoplay+loop+muted handles it.
+// On iOS Safari, autoplay can be blocked until user interaction; force a play() retry.
+document.querySelectorAll('.ig-item video').forEach(v=>{
+  const tryPlay=()=>{const p=v.play();if(p&&p.catch)p.catch(()=>{});};
+  tryPlay();
+  v.addEventListener('canplay',tryPlay,{once:true});
+});
+
+igModal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeIgModal));
+igConfirm.addEventListener('click',()=>{
+  if(pendingIgUrl) window.open(pendingIgUrl,'_blank','noopener,noreferrer');
+  closeIgModal();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&igModal.classList.contains('open'))closeIgModal();});
+</script>
+
+</body>
+</html>
